@@ -172,3 +172,10 @@ footer {
     max-width: 340px;
   }
 }
+
+:target::before {
+  content: "";
+  display: block;
+  height: 80px;
+  margin-top: -80px;
+}

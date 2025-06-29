@@ -179,3 +179,7 @@ footer {
   height: 80px;
   margin-top: -80px;
 }
+
+html {
+  scroll-behavior: smooth;
+}

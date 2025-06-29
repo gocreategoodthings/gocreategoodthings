@@ -116,3 +116,29 @@ footer {
   margin-top: 5rem;
   padding-bottom: 2rem;
 }
+
+@media (max-width: 600px) {
+  body {
+    padding: 0 1rem;
+  }
+
+  .project-grid {
+    gap: 1rem;
+  }
+
+  .project-card {
+    padding: 1.5rem;
+  }
+
+  section {
+    margin: 4rem 0;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
+
+  .hero-tagline {
+    font-size: 1rem;
+  }
+}

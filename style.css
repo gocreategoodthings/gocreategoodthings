@@ -7,11 +7,15 @@
 }
 
 body {
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   background: #fefefe;
   color: #111;
   line-height: 1.6;
   padding: 0 1.5rem;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
 }
 
 header {

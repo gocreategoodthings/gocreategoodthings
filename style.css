@@ -35,14 +35,13 @@ header {
     margin-bottom: 0;
   }
 
-  nav ul {
-    justify-content: flex-end;
-  }
-}
-
 .logo {
   text-align: center;
   margin-bottom: 1rem;
+}
+
+nav {
+  display: none;
 }
 
 nav ul {

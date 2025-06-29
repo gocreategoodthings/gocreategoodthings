@@ -57,6 +57,30 @@ nav a {
   font-weight: 600;
 }
 
+.hamburger {
+  width: 30px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1000;
+  position: relative;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: #111;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger:hover span {
+  background: #007aff;
+  transform: scaleX(1.1);
+}
+
 .hero {
   text-align: center;
   padding: 4rem 1rem;

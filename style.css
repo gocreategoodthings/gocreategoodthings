@@ -26,6 +26,12 @@ header {
   flex-wrap: wrap;
 }
 
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @media (min-width: 768px) {
   header {
     flex-wrap: nowrap;
@@ -208,7 +214,6 @@ footer {
   height: 80px;
   margin-top: -80px;
 }
-
 html {
   scroll-behavior: smooth;
 }

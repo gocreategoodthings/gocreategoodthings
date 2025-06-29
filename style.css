@@ -26,6 +26,20 @@ header {
   flex-wrap: wrap;
 }
 
+@media (min-width: 768px) {
+  header {
+    flex-wrap: nowrap;
+  }
+
+  .logo {
+    margin-bottom: 0;
+  }
+
+  nav ul {
+    justify-content: flex-end;
+  }
+}
+
 .logo {
   text-align: center;
   margin-bottom: 1rem;
@@ -81,7 +95,7 @@ section {
   padding: 0 1rem;
 }
 
-h3 {
+h2 {
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 2rem;
@@ -113,8 +127,12 @@ h3 {
 }
 
 footer {
-  margin-top: 5rem;
-  padding-bottom: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #888;
+  margin-top: 6rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e0e0e0;
 }
 
 @media (max-width: 600px) {
@@ -140,5 +158,11 @@ footer {
 
   .hero-tagline {
     font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-logo {
+    max-width: 340px;
   }
 }

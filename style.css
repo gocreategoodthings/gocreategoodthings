@@ -81,6 +81,14 @@ nav a {
   transform: scaleX(1.1);
 }
 
+@media (min-width: 768px) {
+  .hamburger {
+    position: absolute;
+    top: 2rem;
+    right: 1.5rem;
+  }
+}
+
 .hero {
   text-align: center;
   padding: 4rem 1rem;

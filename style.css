@@ -224,3 +224,11 @@ footer {
 html {
   scroll-behavior: smooth;
 }
+
+section:nth-of-type(odd) {
+  background-color: #f7f7f7;
+}
+
+section:nth-of-type(even) {
+  background-color: #ffffff;
+}

@@ -225,10 +225,19 @@ html {
   scroll-behavior: smooth;
 }
 
-section:nth-of-type(odd) {
-  background-color: #f7f7f7;
+section {
+  padding: 5rem 1rem;
 }
 
-section:nth-of-type(even) {
+section.about {
+  background-color: #f7d878;
+}
+
+section.projects {
   background-color: #ffffff;
+}
+
+section.contact {
+  background-color: #0f2e3c;
+  color: white;
 }

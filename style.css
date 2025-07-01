@@ -230,14 +230,33 @@ section {
 }
 
 section.about {
-  background-color: #f7d878;
-}
-
-section.projects {
   background-color: #ffffff;
+  color: #111;
+  padding: 5rem 1rem;
+  text-align: center;
 }
 
 section.contact {
-  background-color: #0f2e3c;
-  color: white;
+  background-color: #f4f4f4;
+  color: #111;
+  padding: 5rem 1rem;
+  text-align: center;
+}
+
+.about p,
+.contact p {
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.contact a {
+  color: #007aff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
 }

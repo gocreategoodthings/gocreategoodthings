@@ -312,3 +312,9 @@ section.contact {
 .hamburger span {
   transition: all 0.3s ease;
 }
+
+@media (min-width: 768px) {
+  .mobile-nav {
+    display: none !important;
+  }
+}

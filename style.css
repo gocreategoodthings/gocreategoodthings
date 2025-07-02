@@ -275,10 +275,6 @@ section.contact {
   transition: transform 0.3s ease;
 }
 
-.mobile-nav.open {
-  transform: translateX(0);
-}
-
 .mobile-nav ul {
   list-style: none;
   text-align: center;

@@ -1,3 +1,6 @@
+
+/* style.css */
+
 * {
   margin: 0;
   padding: 0;
@@ -12,20 +15,91 @@ body {
   padding: 0 1.5rem;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, .logo {
   font-family: 'Space Grotesk', sans-serif;
 }
 
 header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .brand-name {
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 1.6rem;
   font-weight: 700;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  header {
+    flex-wrap: nowrap;
+  }
+
+  .logo {
+    margin-bottom: 0;
+  }
+
+.logo {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+nav {
+  display: none;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+}
+
+.hamburger {
+  width: 30px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1000;
+  position: relative;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: #111;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger:hover span {
+  background: #007aff;
+  transform: scaleX(1.1);
+}
+
+@media (min-width: 768px) {
+  .hamburger {
+    position: absolute;
+    top: 2rem;
+    right: 1.5rem;
+  }
 }
 
 .hero {
@@ -44,9 +118,26 @@ header {
   100% { transform: scale(1); opacity: 1; }
 }
 
+.hero-tagline {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #222;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #444;
+}
+
 section {
   margin: 5rem 0;
-  padding: 5rem 1rem;
+  padding: 0 1rem;
 }
 
 h2 {
@@ -68,14 +159,16 @@ h2 {
   border-radius: 12px;
   text-align: left;
   font-weight: 500;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: all 0.2s ease;
   text-decoration: none;
   color: #111;
+  border: 1px solid #e0e0e0;
 }
 
 .project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.06);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  border-color: #ccc;
 }
 
 .project-card h4 {
@@ -84,8 +177,70 @@ h2 {
   margin-bottom: 0.5rem;
 }
 
-.about,
-.contact {
+footer {
+  text-align: center;
+  padding: 3rem 1rem;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 0 1rem;
+  }
+
+  .project-grid {
+    gap: 1rem;
+  }
+
+  .project-card {
+    padding: 1.5rem;
+  }
+
+  section {
+    margin: 4rem 0;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
+
+  .hero-tagline {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-logo {
+    max-width: 340px;
+  }
+}
+
+:target::before {
+  content: "";
+  display: block;
+  height: 80px;
+  margin-top: -80px;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  padding: 5rem 1rem;
+}
+
+section.about {
+  background-color: #ffffff;
+  color: #111;
+  padding: 5rem 1rem;
+  text-align: center;
+}
+
+section.contact {
+  background-color: #f4f4f4;
+  color: #111;
+  padding: 5rem 1rem;
   text-align: center;
 }
 
@@ -93,16 +248,8 @@ h2 {
 .contact p {
   max-width: 700px;
   margin: 0 auto 1.5rem;
-  font-size: 1.1rem;
   line-height: 1.6;
-}
-
-section.about {
-  background-color: #ffffff;
-}
-
-section.contact {
-  background-color: #f4f4f4;
+  font-size: 1.1rem;
 }
 
 .contact a {
@@ -113,22 +260,4 @@ section.contact {
 
 .contact a:hover {
   text-decoration: underline;
-}
-
-footer {
-  text-align: center;
-  padding: 3rem 1rem;
-  font-size: 0.9rem;
-  color: #777;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-:target::before {
-  content: "";
-  display: block;
-  height: 80px;
-  margin-top: -80px;
 }

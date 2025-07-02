@@ -25,6 +25,13 @@
     </div>
   </div>
 </header>
+  <nav class="mobile-nav" id="mobileNav">
+  <ul>
+    <li><a href="#selected-work">Selected Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
   <main>
     <section class="hero" data-aos="fade-up">
 <img src="GCGT_Logo-07.png" alt="Go Create Good Things — Brand Logo" class="hero-logo" />
@@ -71,6 +78,16 @@
     duration: 800,
     easing: 'ease-in-out',
     once: true,
+  });
+</script>
+
+  <script>
+  const hamburger = document.getElementById("hamburger");
+  const mobileNav = document.getElementById("mobileNav");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("open");
+    mobileNav.classList.toggle("open");
   });
 </script>
 

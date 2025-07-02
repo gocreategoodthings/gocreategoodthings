@@ -93,12 +93,10 @@ nav a {
   transform: scaleX(1.1);
 }
 
-@media (min-width: 768px) {
-  .hamburger {
-    position: absolute;
-    top: 2rem;
-    right: 1.5rem;
-  }
+.hamburger {
+  position: absolute;
+  top: 2rem;
+  right: 1.5rem;
 }
 
 .hero {
@@ -296,10 +294,6 @@ section.contact {
   font-weight: 700;
   color: #111;
   text-decoration: none;
-}
-
-.mobile-nav.open {
-  right: 0;
 }
 
 /* Hamburger Animation */

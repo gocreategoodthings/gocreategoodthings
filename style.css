@@ -275,6 +275,10 @@ section.contact {
   transition: transform 0.3s ease;
 }
 
+.mobile-nav.open {
+  transform: translateX(0);
+}
+
 .mobile-nav ul {
   list-style: none;
   text-align: center;
@@ -309,6 +313,10 @@ section.contact {
 }
 
 @media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+
   .mobile-nav {
     display: none !important;
   }

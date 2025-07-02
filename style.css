@@ -53,10 +53,6 @@ header {
   margin-bottom: 1rem;
 }
 
-nav {
-  display: none;
-}
-
 nav ul {
   list-style: none;
   display: flex;

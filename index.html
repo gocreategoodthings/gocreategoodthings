@@ -5,79 +5,89 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Go Create Good Things</title>
   <meta name="description" content="A custom portfolio site by a designer who builds brands with purpose. Let's Go Create Good Things together.">
-<meta property="og:title" content="Go Create Good Things" />
-<meta property="og:description" content="A branding, logo design, and video portfolio built for impact." />
-<meta property="og:image" content="gcgt-favicon-colored-transparent.png" />
-<meta property="og:type" content="website" />
+  <meta property="og:title" content="Go Create Good Things" />
+  <meta property="og:description" content="A branding, logo design, and video portfolio built for impact." />
+  <meta property="og:image" content="gcgt-favicon-colored-transparent.png" />
+  <meta property="og:type" content="website" />
   <link rel="stylesheet" href="style.css" />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
   <header class="site-header">
-  <div class="header-inner">
+    <div class="header-inner">
+      <h1 class="brand-name">Go Create Good Things</h1>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
 
-  <h1 class="brand-name">Go Create Good Things</h1>
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
+  <!-- ✅ NAV OVERLAY is separate from <main> now -->
+  <div class="nav-overlay" id="navOverlay">
+    <div class="wave-wrapper">
+      <svg class="wave-svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="#247DA0">
+          <animate attributeName="d" dur="3s" repeatCount="indefinite"
+            values="
+              M0,160 C480,240 960,80 1440,160 L1440,320 L0,320 Z;
+              M0,180 C480,100 960,240 1440,180 L1440,320 L0,320 Z;
+              M0,160 C480,240 960,80 1440,160 L1440,320 L0,320 Z
+            " />
+        </path>
+      </svg>
+    </div>
+    <div class="nav-links">
+      <ul>
+        <li><a href="#selected-work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
   </div>
-</header>
 
-<div class="nav-overlay" id="navOverlay">
-<div class="wave-wrapper">
-  <svg class="wave-svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
-    <path fill="#247DA0">
-      <animate attributeName="d" dur="3s" repeatCount="indefinite"
-        values="
-          M0,160 C480,240 960,80 1440,160 L1440,320 L0,320 Z;
-          M0,180 C480,100 960,240 1440,180 L1440,320 L0,320 Z;
-          M0,160 C480,240 960,80 1440,160 L1440,320 L0,320 Z
-        " />
-    </path>
-  </svg>
-</div>
-
+  <!-- ✅ Everything else stays exactly the same -->
   <main>
     <section class="hero">
-<img src="GCGT_Logo-07.png" alt="Go Create Good Things — Brand Logo" class="hero-logo" />
+      <img src="GCGT_Logo-07.png" alt="Go Create Good Things — Brand Logo" class="hero-logo" />
     </section>
 
-<section class="projects" id="selected-work">
-  <h2>Selected Work</h2>
-  <div class="project-grid">
-    <a href="projects/project-1.html" class="project-card">
-      <h4>Project Title 1</h4>
-      <p>Short description of the project.</p>
-    </a>
-    <a href="projects/project-2.html" class="project-card">
-      <h4>Project Title 2</h4>
-      <p>Another quick blurb about what you did.</p>
-    </a>
-    <a href="projects/project-3.html" class="project-card">
-      <h4>Project Title 3</h4>
-      <p>Something fun, punchy, and scroll-stopping.</p>
-    </a>
-  </div>
-</section>
+    <section class="projects" id="selected-work">
+      <h2>Selected Work</h2>
+      <div class="project-grid">
+        <a href="projects/project-1.html" class="project-card">
+          <h4>Project Title 1</h4>
+          <p>Short description of the project.</p>
+        </a>
+        <a href="projects/project-2.html" class="project-card">
+          <h4>Project Title 2</h4>
+          <p>Another quick blurb about what you did.</p>
+        </a>
+        <a href="projects/project-3.html" class="project-card">
+          <h4>Project Title 3</h4>
+          <p>Something fun, punchy, and scroll-stopping.</p>
+        </a>
+      </div>
+    </section>
 
-<section class="about" id="about">
-<h2>About</h2>
-  <p>Great design should move people, not just look good. That’s what I’m chasing. Born in Texas, building in Oklahoma, and driven by faith, I believe creative work has the power to shift perspectives and make a lasting impact on how we see and engage with the world. Let’s Go Create Good Things together.</p>
-</section>
+    <section class="about" id="about">
+      <h2>About</h2>
+      <p>Great design should move people, not just look good. That’s what I’m chasing. Born in Texas, building in Oklahoma, and driven by faith, I believe creative work has the power to shift perspectives and make a lasting impact on how we see and engage with the world. Let’s Go Create Good Things together.</p>
+    </section>
 
-<section class="contact" id="contact">
-<h2>Let’s Talk</h2>
-  <p>Have an idea, a brand, or something that matters? I’d love to hear about it.</p>
-<p><a href="mailto:gocreategoodthings@gmail.com">→ gocreategoodthings@gmail.com</a></p>
-</section>
+    <section class="contact" id="contact">
+      <h2>Let’s Talk</h2>
+      <p>Have an idea, a brand, or something that matters? I’d love to hear about it.</p>
+      <p><a href="mailto:gocreategoodthings@gmail.com">→ gocreategoodthings@gmail.com</a></p>
+    </section>
   </main>
 
   <footer>
     <p>© 2025 Go Create Good Things</p>
   </footer>
+
   <script>
     const hamburger = document.getElementById('hamburger');
     const navOverlay = document.getElementById('navOverlay');

@@ -297,3 +297,80 @@ section.contact {
 .site-nav.nav-open {
   display: flex;
 }
+
+/* === FULLSCREEN NAV OVERLAY & WAVE === */
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #007aff;
+  transform: translateX(100%);
+  transition: transform 0.8s ease;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.nav-overlay.open {
+  transform: translateX(0%);
+}
+
+.wave {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 80%);
+  animation: waveFill 1.4s ease forwards;
+  z-index: 1;
+}
+
+@keyframes waveFill {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.nav-links {
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  animation: fadeInNav 1s ease 1.2s forwards;
+}
+
+.nav-links ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 1.5rem 0;
+}
+
+.nav-links a {
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+  opacity: 0.7;
+}
+
+@keyframes fadeInNav {
+  to {
+    opacity: 1;
+  }
+}

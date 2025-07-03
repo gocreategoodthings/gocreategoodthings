@@ -324,11 +324,17 @@ section.contact {
   position: absolute;
   top: 0;
   right: 0;
-  width: 100%;
+  width: 120%;
   height: 100%;
-  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1) 0%, transparent 80%);
-  animation: waveFill 1.4s ease forwards;
+  background: #247DA0; /* Dark teal */
+  clip-path: path("M0,0 C150,100 350,-100 1000,0 L1000,1000 L0,1000 Z");
+  transform: translateX(100%);
+  transition: transform 1.5s ease-in-out;
   z-index: 1;
+}
+
+  .nav-overlay.open .wave {
+  transform: translateX(0);
 }
 
 @keyframes waveFill {
@@ -341,10 +347,17 @@ section.contact {
 }
 
 .nav-links {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 2;
   opacity: 0;
-  animation: fadeInNav 1s ease 1.2s forwards;
+  transition: opacity 1s ease 0.8s;
+}
+
+.nav-overlay.open .nav-links {
+  opacity: 1;
 }
 
 .nav-links ul {

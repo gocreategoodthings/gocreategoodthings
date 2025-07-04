@@ -357,11 +357,39 @@ section.about {
 }
 
 /* === FOOTER === */
-footer {
+.site-footer {
   text-align: center;
-  padding: 3rem 1rem;
+  background: #f4f4f4;
+  padding: 3rem 1rem 2rem;
   font-size: 0.9rem;
-  color: #777;
+  color: #222;
+}
+
+.site-footer p {
+  margin-bottom: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.social-links {
+  font-weight: 500;
+}
+
+.social-links a {
+  color: #247DA0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #E3603E;
+}
+
+.social-links .divider {
+  margin: 0 0.5rem;
+  color: #ccc;
+  font-weight: 300;
+  pointer-events: none;
 }
 
 /* === MOBILE === */

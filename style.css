@@ -369,9 +369,17 @@ footer {
     height: 2px;
   }
 
-  .hero {
-    padding: 3rem 1rem;
-  }
+ .hero {
+  background-color: #fefefe; /* or any bg color/image you want */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 4rem 1rem 6rem;
+  text-align: center;
+}
 
   .project-card {
     padding: 1.5rem;

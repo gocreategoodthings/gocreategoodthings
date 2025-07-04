@@ -40,6 +40,12 @@ h1, h2, h3, h4, .logo {
   margin: 0;
 }
 
+.brand-name:hover {
+  color: #247DA0;
+  transition: color 0.2s ease;
+  cursor: default;
+}
+
   .logo {
     margin-bottom: 0;
   }

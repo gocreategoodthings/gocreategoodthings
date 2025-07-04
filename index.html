@@ -18,14 +18,20 @@
     <div class="header-inner">
       <h1 class="brand-name">Go Create Good Things</h1>
       <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
     </div>
   </header>
 
 <div class="nav-overlay" id="navOverlay">
+  <div class="hamburger" id="hamburger-overlay">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  
   <!-- Bubbles will float after slide-in -->
   <div class="bubble-container">
     <div class="bubble"></div>
@@ -92,28 +98,25 @@
     <p>© 2025 Go Create Good Things</p>
   </footer>
 
- <script>
+<script>
   const hamburger = document.getElementById('hamburger');
+  const hamburgerOverlay = document.getElementById('hamburger-overlay');
   const navOverlay = document.getElementById('navOverlay');
   const navLinks = document.querySelectorAll('.nav-links a');
   const bubbleContainer = document.querySelector('.bubble-container');
 
   function createBubbles() {
     bubbleContainer.innerHTML = '';
-
     for (let i = 0; i < 30; i++) {
       const bubble = document.createElement('div');
       bubble.classList.add('bubble');
-
       const size = Math.random() * 20 + 5;
       const left = Math.random() * 100;
-
       bubble.style.width = `${size}px`;
       bubble.style.height = `${size}px`;
       bubble.style.left = `${left}%`;
       bubble.style.animationDuration = `${4 + Math.random() * 4}s`;
       bubble.style.animationDelay = `${Math.random() * 2}s`;
-
       bubbleContainer.appendChild(bubble);
     }
   }
@@ -125,25 +128,23 @@
     bubbleContainer.classList.add('show');
   }
 
-  hamburger.addEventListener('click', () => {
+  function toggleNav() {
     navOverlay.classList.toggle('open');
-    hamburger.classList.toggle('open');
-    document.body.classList.toggle('no-scroll');
-
+    document.body.style.overflow = navOverlay.classList.contains('open') ? 'hidden' : '';
     if (navOverlay.classList.contains('open')) {
       setTimeout(triggerBubbles, 900);
-    } else {
-      bubbleContainer.classList.remove('show');
     }
-  });
+  }
+
+  hamburger.addEventListener('click', toggleNav);
+  hamburgerOverlay.addEventListener('click', toggleNav);
 
   navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    navOverlay.classList.remove('open');
-    hamburger.classList.remove('open'); // Reset hamburger to default
-    document.body.classList.remove('no-scroll'); // Allow scrolling again
+    link.addEventListener('click', () => {
+      navOverlay.classList.remove('open');
+      document.body.style.overflow = '';
+    });
   });
-});
 </script>
   
 </body>

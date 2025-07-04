@@ -15,22 +15,17 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="header-inner">
-      <h1 class="brand-name">Go Create Good Things</h1>
-      <div class="hamburger" id="hamburger">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
+  <div class="header-inner">
+    <h1 class="brand-name">Go Create Good Things</h1>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-  </header>
+  </div>
+</header>
 
 <div class="nav-overlay" id="navOverlay">
-  <div class="hamburger" id="hamburger-overlay">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
   
   <!-- Bubbles will float after slide-in -->
   <div class="bubble-container">
@@ -100,7 +95,7 @@
 
 <script>
   const hamburger = document.getElementById('hamburger');
-  const hamburgerOverlay = document.getElementById('hamburger-overlay');
+  // Removed: no second hamburger
   const navOverlay = document.getElementById('navOverlay');
   const navLinks = document.querySelectorAll('.nav-links a');
   const bubbleContainer = document.querySelector('.bubble-container');
@@ -137,7 +132,7 @@
   }
 
   hamburger.addEventListener('click', toggleNav);
-  hamburgerOverlay.addEventListener('click', toggleNav);
+  // Remove the second event listener to hamburgerOverlay
 
   navLinks.forEach(link => {
     link.addEventListener('click', () => {

@@ -92,6 +92,12 @@ nav a {
   position: relative;
 }
 
+@media (min-width: 768px) {
+  .hamburger {
+    margin-right: 0.5rem;
+  }
+}
+
 .hamburger span {
   display: block;
   height: 3px;
@@ -103,14 +109,6 @@ nav a {
 .hamburger:hover span {
   background: #007aff;
   transform: scaleX(1.1);
-}
-
-@media (min-width: 768px) {
-  .hamburger {
-    position: absolute;
-    top: 2rem;
-    right: 1.5rem;
-  }
 }
 
 .hero {

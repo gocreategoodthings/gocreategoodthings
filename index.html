@@ -25,18 +25,23 @@
     </div>
   </header>
 
- <div class="nav-overlay" id="navOverlay">
-  <div class="wave-wrapper">
-  <svg class="wave-svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
-    <path fill="#0F3D4A">
-      <animate attributeName="d" dur="3s" repeatCount="indefinite"
-        values="
-          M0,160 C480,240 960,80 1440,160 L1440,320 L0,320 Z;
-          M0,180 C480,100 960,240 1440,180 L1440,320 L0,320 Z;
-          M0,160 C480,240 960,80 1440,160 L1440,320 L0,320 Z
-        " />
-    </path>
-  </svg>
+<div class="nav-overlay" id="navOverlay">
+  <!-- Bubbles will float after slide-in -->
+  <div class="bubble-container">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
+
+  <div class="nav-links">
+    <ul>
+      <li><a href="#selected-work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
 </div>
 
   <div class="nav-links">

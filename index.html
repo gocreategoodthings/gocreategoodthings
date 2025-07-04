@@ -17,7 +17,7 @@
   <header class="site-header">
     <div class="header-inner">
       <h1 class="brand-name">Go Create Good Things</h1>
-      <div class="hamburger" id="hamburger">
+      <div class="hamburger-icon" id="hamburger">
         <span></span>
         <span></span>
         <span></span>
@@ -26,14 +26,12 @@
   </header>
 
   <div class="nav-overlay" id="navOverlay">
-    <!-- Optional close hamburger inside overlay -->
-    <div class="hamburger" id="hamburger-close">
+    <div class="hamburger-icon" id="hamburger-close">
       <span></span>
       <span></span>
       <span></span>
     </div>
 
-    <!-- Bubbles will float after slide-in -->
     <div class="bubble-container">
       <div class="bubble"></div>
       <div class="bubble"></div>
@@ -120,14 +118,15 @@
       bubbleContainer.classList.add('show');
     }
 
-   function toggleNav() {
-  navOverlay.classList.toggle('open');
-  hamburger.classList.toggle('open'); // ✅ make sure this line is added!
-  document.body.style.overflow = navOverlay.classList.contains('open') ? 'hidden' : '';
-  if (navOverlay.classList.contains('open')) {
-    setTimeout(triggerBubbles, 900);
-  }
-}
+    function toggleNav() {
+      navOverlay.classList.toggle('open');
+      hamburger.classList.toggle('open');
+      hamburgerClose.classList.toggle('open');
+      document.body.style.overflow = navOverlay.classList.contains('open') ? 'hidden' : '';
+      if (navOverlay.classList.contains('open')) {
+        setTimeout(triggerBubbles, 900);
+      }
+    }
 
     hamburger.addEventListener('click', toggleNav);
     hamburgerClose.addEventListener('click', toggleNav);
@@ -135,6 +134,8 @@
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
         navOverlay.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburgerClose.classList.remove('open');
         document.body.style.overflow = '';
       });
     });

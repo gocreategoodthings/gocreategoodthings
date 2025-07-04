@@ -515,3 +515,30 @@ body.no-scroll {
 #hamburger-close.open span:nth-child(3) {
   transform: rotate(-45deg) translate(6px, -6px);
 }
+
+/* Fix visibility of hamburger and close icon */
+
+#hamburger span {
+  background-color: #111; /* Dark on light bg */
+}
+
+#hamburger-close {
+  position: absolute;
+  top: 2rem;
+  right: 1.5rem;
+  z-index: 10001;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+}
+
+#hamburger-close span {
+  display: block;
+  height: 3px;
+  background-color: #fff; /* White on dark overlay */
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}

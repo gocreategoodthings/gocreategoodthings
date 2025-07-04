@@ -93,19 +93,31 @@
   </footer>
 
   <script>
- const hamburger = document.getElementById('hamburger');
-const navOverlay = document.getElementById('navOverlay');
-const navLinks = document.querySelectorAll('.nav-links a');
+  const hamburger = document.getElementById('hamburger');
+  const navOverlay = document.getElementById('navOverlay');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const bubbleContainer = document.querySelector('.bubble-container');
 
-hamburger.addEventListener('click', () => {
-  navOverlay.classList.toggle('open');
-});
+  function triggerBubbles() {
+    bubbleContainer.classList.remove('show');
+    // Force reflow to restart animation
+    void bubbleContainer.offsetWidth;
+    bubbleContainer.classList.add('show');
+  }
 
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    navOverlay.classList.remove('open');
+  hamburger.addEventListener('click', () => {
+    navOverlay.classList.toggle('open');
+
+    if (navOverlay.classList.contains('open')) {
+      setTimeout(triggerBubbles, 900); // matches your overlay transition
+    }
   });
-});
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navOverlay.classList.remove('open');
+    });
+  });
 </script>
   
 </body>

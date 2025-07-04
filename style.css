@@ -18,12 +18,18 @@ h1, h2, h3, h4, .logo {
   font-family: 'Space Grotesk', sans-serif;
 }
 
-header {
+.site-header {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 0;
-  flex-wrap: wrap;
 }
 
 .header-inner {

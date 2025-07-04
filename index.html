@@ -1,94 +1,76 @@
+<!-- BASELINE HTML - Go Create Good Things v2.0 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Go Create Good Things</title>
-  <meta name="description" content="A designer who builds brands with purpose. Let’s Go Create Good Things together." />
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
 </head>
 <body>
+
   <header class="site-header">
-    <h1 class="brand-name">GO CREATE GOOD THINGS</h1>
-    <button class="hamburger" id="hamburger">&#9776;</button>
+    <div class="header-inner">
+      <div class="brand-name">Go Create Good Things</div>
+    </div>
   </header>
 
-  <nav class="nav-overlay" id="navOverlay">
-    <ul>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#process">Process</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <button id="hamburger" class="hamburger-icon" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="nav-overlay" id="navOverlay">
+    <button id="hamburger-close" class="hamburger-icon" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="social-links">
+      <a href="#">IG</a>
+      <a href="#">Dribbble</a>
+      <a href="#">LinkedIn</a>
+    </div>
+    <div class="bubble-container" id="bubbles"></div>
+  </div>
+
+  <section class="hero">
+    <img src="your-logo.png" alt="GCGT Logo" class="hero-logo" />
+    <p class="hero-tagline">Design with purpose. Impact with creativity.</p>
+  </section>
 
   <main>
-    <section class="hero">
-      <img src="https://via.placeholder.com/200x200?text=GCGT+Logo" alt="GCGT Logo" />
-      <h2>Design with purpose. Impact with creativity.</h2>
-    </section>
-
-    <section class="projects" id="work">
+    <section id="work">
       <h2>Selected Work</h2>
       <div class="project-grid">
-        <a href="#" class="project-card">
-          <img src="https://via.placeholder.com/600x400?text=Project+1" alt="Project 1" />
-          <div>
-            <h3>Adventure Co Branding</h3>
-            <p>Outdoor lifestyle brand rooted in grit and glory.</p>
-          </div>
+        <a class="project-card" href="#">
+          <h4>Adventure Co Branding</h4>
+          <p>Crafted an outdoor lifestyle brand rooted in grit and glory.</p>
         </a>
-        <a href="#" class="project-card">
-          <img src="https://via.placeholder.com/600x400?text=Project+2" alt="Project 2" />
-          <div>
-            <h3>Sunrise Shack Rebrand</h3>
-            <p>Vibrant design for Hawaii’s happiest coffee bar.</p>
-          </div>
+        <a class="project-card" href="#">
+          <h4>Sunrise Shack Rebrand</h4>
+          <p>Vibrant design for Hawaii's happiest coffee bar.</p>
         </a>
-        <a href="#" class="project-card">
-          <img src="https://via.placeholder.com/600x400?text=Project+3" alt="Project 3" />
-          <div>
-            <h3>Seager Co Film Series</h3>
-            <p>Rugged storytelling meets cinematic polish.</p>
-          </div>
+        <a class="project-card" href="#">
+          <h4>Seager Co Film Series</h4>
+          <p>Rugged storytelling meets clean cinematic polish.</p>
         </a>
       </div>
     </section>
 
     <section class="about" id="about">
       <h2>About</h2>
-      <p>Born in Texas, building in Oklahoma, and driven by faith — I believe creativity is a gift meant to stir hearts, build legacy, and shift culture.</p>
-    </section>
-
-    <section class="process" id="process">
-      <h2>How I Work</h2>
-      <div class="process-grid">
-        <img src="https://via.placeholder.com/300x400?text=You+Here" alt="Photo of Designer" class="designer-photo" />
-        <div class="steps">
-          <div class="step">
-            <img src="https://via.placeholder.com/60?text=S" alt="Strategy Icon" />
-            <h3>Strategy</h3>
-            <p>Digging deep to find the why behind your brand.</p>
-          </div>
-          <div class="step">
-            <img src="https://via.placeholder.com/60?text=D" alt="Design Icon" />
-            <h3>Design</h3>
-            <p>Translating story into a unique and lasting visual identity.</p>
-          </div>
-          <div class="step">
-            <img src="https://via.placeholder.com/60?text=I" alt="Impact Icon" />
-            <h3>Impact</h3>
-            <p>Launching work that makes people feel something.</p>
-          </div>
-        </div>
-      </div>
+      <p>Great design should move people. That’s what I’m chasing. Born in Texas, building in Oklahoma, and driven by faith — I believe creativity is a gift meant to stir hearts, build legacy, and shift culture. Let’s go create good things, together.</p>
     </section>
 
     <section class="contact" id="contact">
       <h2>Let’s Talk</h2>
-      <p>Got a brand, a project, or an idea worth pursuing?</p>
+      <p>Got a brand, a project, or an idea worth pursuing? I’d love to hear from you.</p>
       <a href="mailto:gocreategoodthings@gmail.com">→ gocreategoodthings@gmail.com</a>
     </section>
   </main>
@@ -98,9 +80,23 @@
   </footer>
 
   <script>
-    const hamburger = document.getElementById('hamburger');
-    const navOverlay = document.getElementById('navOverlay');
-    hamburger.onclick = () => navOverlay.classList.toggle('open');
+    function toggleNav() {
+      const overlay = document.getElementById('navOverlay');
+      const bubbles = document.getElementById('bubbles');
+      overlay.classList.toggle('open');
+      document.body.style.overflow = overlay.classList.contains('open') ? 'hidden' : '';
+      bubbles.classList.toggle('show');
+
+      if (bubbles.classList.contains('show') && !bubbles.children.length) {
+        for (let i = 0; i < 20; i++) {
+          const b = document.createElement('div');
+          b.classList.add('bubble');
+          b.style.left = Math.random() * 100 + 'vw';
+          b.style.animationDelay = Math.random() * 5 + 's';
+          bubbles.appendChild(b);
+        }
+      }
+    }
   </script>
 </body>
 </html>

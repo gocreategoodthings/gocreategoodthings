@@ -85,13 +85,14 @@ h1, h2, h3, h4 {
 
 .hero-inner {
   width: 100%;
-  max-width: 1200px;
-  padding: 0 2rem;
-  text-align: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-logo {
-  max-width: 400px;
+  max-width: 500px;
   width: 100%;
   height: auto;
   opacity: 0;

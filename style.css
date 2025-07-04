@@ -103,6 +103,16 @@ h2 {
   gap: 1.5rem;
 }
 
+.project-thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, #66BCC0, #247DA0);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
 .project-card {
   background: #f6f6f6;
   padding: 2rem;
@@ -114,15 +124,20 @@ h2 {
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
   border-color: #ccc;
 }
 
+.project-card:hover .project-thumb {
+  transform: scale(1.03);
+}
+
 .project-card h4 {
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.4rem;
+  font-weight: 700;
   margin-bottom: 0.5rem;
+  letter-spacing: -0.015em;
 }
 
 /* === ABOUT & CONTACT SECTIONS === */

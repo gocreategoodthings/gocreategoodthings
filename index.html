@@ -25,31 +25,21 @@
     </div>
   </header>
 
-  <!-- ✅ NAV OVERLAY is separate from <main> now -->
-  <div class="nav-overlay" id="navOverlay">
-    <div class="wave-wrapper">
-      <svg class="wave-svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
-        <path fill="#247DA0">
-          <animate attributeName="d" dur="3s" repeatCount="indefinite"
-            values="
-              M0,160 C480,240 960,80 1440,160 L1440,320 L0,320 Z;
-              M0,180 C480,100 960,240 1440,180 L1440,320 L0,320 Z;
-              M0,160 C480,240 960,80 1440,160 L1440,320 L0,320 Z
-            " />
-        </path>
-      </svg>
-    </div>
-    <div class="nav-links">
-      <ul>
-        <li><a href="#selected-work">Work</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
+ <div class="nav-overlay" id="navOverlay">
+  <div class="wave-wrapper">
+    <svg class="wave-svg" ...> ... </svg>
   </div>
 
-  <!-- ✅ Everything else stays exactly the same -->
-  <main>
+  <div class="nav-links">
+    <ul>
+      <li><a href="#selected-work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</div>
+
+<main>
     <section class="hero">
       <img src="GCGT_Logo-07.png" alt="Go Create Good Things — Brand Logo" class="hero-logo" />
     </section>

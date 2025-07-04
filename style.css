@@ -78,6 +78,10 @@ h1, h2, h3, h4 {
   max-width: 400px;
   width: 100%;
   height: auto;
+  opacity: 0;
+  transform: scale(0.95) translateY(30px);
+  animation: popFadeRise 1s ease forwards;
+  animation-delay: 0.3s;
 }
 
 /* === MAIN CONTENT === */

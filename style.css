@@ -105,7 +105,7 @@ nav a {
   transform: scaleX(1.1);
 }
 
-/* Animate to "X" when open */
+/* Animate to "X" when nav is open */
 .nav-overlay.open .hamburger span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }

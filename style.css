@@ -26,16 +26,7 @@ h1, h2, h3, h4, .logo {
 .header-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 1.5rem 1.5rem; /* Top/Bottom: 1.5rem, Left/Right: 1.5rem */
   display: flex;
   justify-content: space-between;
   align-items: center;

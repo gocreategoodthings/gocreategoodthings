@@ -138,12 +138,12 @@
   });
 
   navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      navOverlay.classList.remove('open');
-      document.body.classList.remove('no-scroll');
-      bubbleContainer.classList.remove('show');
-    });
+  link.addEventListener('click', () => {
+    navOverlay.classList.remove('open');
+    hamburger.classList.remove('open'); // Reset hamburger to default
+    document.body.classList.remove('no-scroll'); // Allow scrolling again
   });
+});
 </script>
   
 </body>

@@ -27,10 +27,13 @@ header {
 }
 
 .header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
   display: flex;
-justify-content: center;
-gap: 2rem;
+  justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .brand-name {

@@ -7,8 +7,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
-  background: #fff;
+  background: #fefefe;
 }
 
 body {
@@ -16,222 +15,220 @@ body {
   color: #111;
   line-height: 1.6;
   overflow-x: hidden;
-  background-color: #ffffff;
 }
 
 /* ========== TYPOGRAPHY ========== */
 h1, h2, h3, h4 {
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
-  color: #111;
 }
 
-h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-h3 {
-  font-size: 1.5rem;
-  margin-top: 2rem;
-}
-
-p {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  color: #333;
+img {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
 }
 
 /* ========== HEADER ========== */
-.site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 1.5rem 2rem;
-  z-index: 9999;
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: transparent;
+  padding: 2rem 1.5rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #ffffffc7;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #eee;
 }
 
 .brand-name {
-  font-size: 1.4rem;
   font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-/* ========== HAMBURGER MENU ========== */
+/* ========== HAMBURGER ICON ========== */
 .hamburger-icon {
-  width: 30px;
-  height: 22px;
+  width: 26px;
+  height: 18px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
   background: none;
   border: none;
-  padding: 0;
 }
 
 .hamburger-icon span {
+  display: block;
   height: 3px;
   background-color: #111;
   border-radius: 2px;
-  transition: all 0.3s ease;
 }
 
-.hamburger-icon.open span:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
-}
-
-.hamburger-icon.open span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger-icon.open span:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
-}
-
-/* ========== NAV OVERLAY ========== */
-.nav-overlay {
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(to bottom, #1c2f3c, #0e1c25);
-  z-index: 9998;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.nav-overlay.open {
-  display: flex;
-}
-
-.nav-links ul {
-  list-style: none;
-  text-align: center;
-}
-
-.nav-links li {
-  margin: 1rem 0;
-}
-
-.nav-links a {
-  font-size: 2rem;
-  color: white;
-  text-decoration: none;
-}
-
-/* ========== HERO ========== */
+/* ========== HERO SECTION ========== */
 .hero {
   height: 100vh;
+  background: linear-gradient(to bottom, #ffffff, #eaf7f8);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom, #ffffff, #e8f4f5);
-  padding: 2rem;
+  justify-content: center;
   text-align: center;
+  padding: 6rem 1.5rem 2rem;
 }
 
-.hero img {
-  width: 200px;
-  margin-bottom: 1.5rem;
+.hero-logo {
+  width: 180px;
+  margin-bottom: 2rem;
 }
 
-.hero h2 {
-  font-size: 1.5rem;
+.hero-tagline {
+  font-size: 1.25rem;
   font-weight: 600;
 }
 
-/* ========== PROJECTS SECTION ========== */
-.projects {
-  padding: 6rem 2rem;
+/* ========== MAIN ========== */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 6rem;
+}
+
+/* ========== SECTION BASE ========== */
+section {
+  padding: 6rem 1.5rem;
   text-align: center;
 }
 
+h2 {
+  font-size: 2.25rem;
+  margin-bottom: 2rem;
+}
+
+/* ========== SELECTED WORK ========== */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
 }
 
 .project-card {
-  background: #f7f7f7;
+  background: #f8f8f8;
   padding: 2rem;
-  border-radius: 12px;
-  text-align: left;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.06);
 }
 
 .project-card img {
   width: 100%;
-  border-radius: 8px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
   margin-bottom: 1rem;
+}
+
+.project-card h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
 }
 
 /* ========== ABOUT SECTION ========== */
 .about {
-  padding: 6rem 2rem;
-  background-color: #ffffff;
-  text-align: center;
-  max-width: 800px;
-  margin: auto;
+  background-color: #fafafa;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 5rem 1rem;
+}
+
+.about p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.7;
 }
 
 /* ========== HOW I WORK SECTION ========== */
 .how-i-work {
-  background: #f9f9f9;
-  padding: 6rem 2rem;
-  text-align: center;
+  background: #ffffff;
+  padding: 6rem 1.5rem;
 }
 
-.how-i-work img {
-  max-width: 150px;
-  margin: 2rem auto;
-  display: block;
+.how-i-work h3 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
 }
 
-.how-i-work .work-steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
+.how-i-work img.photo {
+  width: 240px;
+  border-radius: 12px;
+  margin: 0 auto 2rem;
 }
 
 .work-step {
-  background: #fff;
-  border-radius: 12px;
-  padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  max-width: 640px;
+  margin: 2rem auto;
+  text-align: left;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
 }
 
-.work-step img {
-  width: 48px;
-  height: 48px;
-  margin-bottom: 1rem;
+.work-step img.icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+.work-step h4 {
+  margin: 0 0 0.25rem;
+  font-size: 1.1rem;
+}
+
+.work-step p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 /* ========== CONTACT SECTION ========== */
 .contact {
-  background-color: #eaf5f7;
-  padding: 6rem 2rem;
-  text-align: center;
+  background: #eaf7f8;
+  padding: 6rem 1.5rem;
+}
+
+.contact h2 {
+  margin-bottom: 1rem;
+}
+
+.contact p {
+  margin-bottom: 1.25rem;
+  font-size: 1.05rem;
 }
 
 .contact a {
   color: #007aff;
   font-weight: 600;
-  text-decoration: none;
 }
 
 .contact a:hover {
@@ -240,32 +237,33 @@ p {
 
 /* ========== FOOTER ========== */
 footer {
-  padding: 3rem 1rem;
   text-align: center;
-  font-size: 0.9rem;
+  padding: 3rem 1rem;
+  font-size: 0.85rem;
   color: #777;
 }
 
-/* ========== RESPONSIVE ========== */
+/* ========== MEDIA QUERIES ========== */
 @media (max-width: 768px) {
-  h2 {
-    font-size: 2rem;
+  .hero-logo {
+    width: 150px;
   }
 
-  .hero h2 {
-    font-size: 1.2rem;
+  .project-card img {
+    height: 160px;
   }
 
-  .work-steps {
-    grid-template-columns: 1fr;
+  .work-step {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
   }
 
-  .project-card {
-    padding: 1.5rem;
+  .work-step img.icon {
+    margin-bottom: 0.5rem;
   }
 
-  .hamburger-icon {
-    width: 26px;
-    height: 20px;
+  .how-i-work img.photo {
+    width: 180px;
   }
 }

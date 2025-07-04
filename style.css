@@ -1,4 +1,4 @@
-/* === Reset === */
+/* === RESET + BASE === */
 * {
   margin: 0;
   padding: 0;
@@ -17,8 +17,12 @@ h1, h2, h3, h4, .logo {
   font-family: 'Space Grotesk', sans-serif;
 }
 
+/* === HEADER === */
 .site-header {
-  padding: 1.5rem 0;
+  padding: 2rem 1.5rem;
+  background: transparent;
+  position: relative;
+  z-index: 10;
   border-bottom: 1px solid #eee;
 }
 
@@ -33,6 +37,7 @@ h1, h2, h3, h4, .logo {
 }
 
 .brand-name {
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 1.6rem;
   font-weight: 700;
   margin: 0;
@@ -44,29 +49,8 @@ h1, h2, h3, h4, .logo {
   cursor: default;
 }
 
-.logo {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-nav {
-  display: none;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-
-nav a {
-  text-decoration: none;
-  color: #111;
-  font-weight: 600;
-}
-
-/* === Hamburger Button Styles (Pro Version) === */
-.hamburger-icon {
+/* === HAMBURGER (MAIN + CLOSE ICON) === */
+.hamburger {
   position: fixed;
   top: 2rem;
   right: 1.5rem;
@@ -75,60 +59,66 @@ nav a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
   z-index: 10001;
-  background: none;
-  border: none;
-  padding: 0;
-  color: #fff;
+  cursor: pointer;
 }
 
-.hamburger-icon span {
+.hamburger span {
   display: block;
-  width: 100%;
   height: 3px;
   background-color: currentColor;
   border-radius: 2px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.hamburger-icon.open span:nth-child(1) {
+/* Toggle transforms */
+.hamburger.open span:nth-child(1),
+#hamburger-close.open span:nth-child(1) {
   transform: translateY(9px) rotate(45deg);
 }
-.hamburger-icon.open span:nth-child(2) {
+
+.hamburger.open span:nth-child(2),
+#hamburger-close.open span:nth-child(2) {
   opacity: 0;
 }
-.hamburger-icon.open span:nth-child(3) {
+
+.hamburger.open span:nth-child(3),
+#hamburger-close.open span:nth-child(3) {
   transform: translateY(-9px) rotate(-45deg);
 }
 
-.hamburger-icon:focus {
-  outline: 2px solid #F99840;
-  outline-offset: 4px;
+/* Hover effect */
+.hamburger:hover span {
+  transform: scaleX(1.1);
 }
 
+/* === OVERLAY NAV CLOSE ICON === */
 #hamburger-close {
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
+  width: 30px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 10001;
+  cursor: pointer;
 }
 
-/* === Responsive Hamburger Sizing === */
-@media (max-width: 480px) {
-  .hamburger-icon {
-    width: 26px;
-    height: 20px;
-    top: 1rem;
-    right: 1rem;
-  }
-
-  .hamburger-icon span {
-    height: 2px;
-  }
+#hamburger-close span {
+  display: block;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* === Hero Section === */
+#hamburger-close:hover {
+  transform: scale(1.05);
+}
+
+/* === HERO === */
 .hero {
   padding: 4rem 1rem 6rem;
   text-align: center;
@@ -147,43 +137,111 @@ nav a {
   100% { transform: scale(1); opacity: 1; }
 }
 
-.hero-tagline {
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: #222;
-}
-
-.hero h2 {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.1rem;
-  color: #444;
-}
-
-/* === Layout === */
-section {
-  margin: 4rem 0;
-  padding: 0 1.25rem;
-}
-
+/* === SECTIONS === */
 main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
-h2 {
-  font-size: clamp(1.5rem, 5vw, 2rem);
-  font-weight: 600;
-  margin-bottom: 2rem;
-  text-align: center;
-  line-height: 1.2;
+section {
+  margin: 4rem 0;
+  padding: 5rem 1rem;
 }
 
+.about, .contact {
+  text-align: center;
+}
+
+.about {
+  background-color: #ffffff;
+}
+
+.contact {
+  background-color: #f4f4f4;
+}
+
+.about p,
+.contact p {
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.contact a {
+  color: #007aff;
+  font-weight: 600;
+  text-decoration: none;
+}
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* === NAV OVERLAY === */
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(to top, #0F3D4A, #134e5e, #1f6a75);
+  transform: translateX(100%);
+  transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.nav-overlay.open {
+  transform: translateX(0%);
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* === NAV LINKS === */
+.nav-links {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 1s ease 0.8s;
+}
+
+.nav-overlay.open .nav-links {
+  opacity: 1;
+}
+
+.nav-links ul {
+  list-style: none;
+  text-align: center;
+}
+
+.nav-links li {
+  margin: 1.5rem 0;
+}
+
+.nav-links a {
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+/* === PROJECT GRID === */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -214,7 +272,7 @@ h2 {
   margin-bottom: 0.5rem;
 }
 
-/* === Footer === */
+/* === FOOTER === */
 footer {
   text-align: center;
   padding: 3rem 1rem;
@@ -222,147 +280,7 @@ footer {
   color: #777;
 }
 
-/* === Media Queries === */
-@media (max-width: 600px) {
-  body {
-    padding: 0 1rem;
-  }
-
-  .project-grid {
-    gap: 1rem;
-  }
-
-  .project-card {
-    padding: 1.5rem;
-  }
-
-  section {
-    margin: 4rem 0;
-  }
-
-  h3 {
-    font-size: 1.6rem;
-  }
-
-  .hero-tagline {
-    font-size: 1rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .hero-logo {
-    max-width: 360px;
-  }
-}
-
-/* === Scroll Anchors === */
-:target::before {
-  content: "";
-  display: block;
-  height: 80px;
-  margin-top: -80px;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-/* === Section Styles === */
-section {
-  padding: 5rem 1rem;
-}
-
-section.about {
-  background-color: #ffffff;
-  color: #111;
-  text-align: center;
-}
-
-section.contact {
-  background-color: #f4f4f4;
-  color: #111;
-  text-align: center;
-}
-
-.about p,
-.contact p {
-  max-width: 700px;
-  margin: 0 auto 1.5rem;
-  line-height: 1.6;
-  font-size: 1.1rem;
-}
-
-.contact a {
-  color: #007aff;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.contact a:hover {
-  text-decoration: underline;
-}
-
-/* === Nav and Mobile Nav === */
-.site-nav {
-  margin-top: 1rem;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  background: #fff;
-  padding: 1rem 0;
-  border-top: 1px solid #eee;
-}
-
-.site-nav.nav-open {
-  display: flex;
-}
-
-.site-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  padding: 0;
-}
-
-.site-nav a {
-  text-decoration: none;
-  font-weight: 600;
-  color: #111;
-  transition: color 0.2s ease;
-}
-
-.site-nav a:hover {
-  color: #007aff;
-}
-
-/* === Fullscreen Nav Overlay === */
-.nav-overlay {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  background: linear-gradient(to top, #0F3D4A, #134e5e, #1f6a75);
-  transform: translateX(100%);
-  transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1);
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.nav-overlay.open {
-  transform: translateX(0%);
-}
-
-.nav-overlay.open .wave-wrapper {
-  transform: translateX(0%);
-}
-
-/* === Bubbles === */
+/* === BUBBLES === */
 .bubble-container {
   position: absolute;
   bottom: 0;
@@ -393,58 +311,39 @@ section.contact {
 }
 
 @keyframes rise {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 0.9;
+  0% { transform: translateY(0) scale(1); opacity: 0.9; }
+  50% { opacity: 0.4; }
+  100% { transform: translateY(-120vh) scale(1.2); opacity: 0; }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 600px) {
+  body {
+    padding: 0 1rem;
   }
-  50% {
-    opacity: 0.4;
+
+  .project-grid {
+    gap: 1rem;
   }
-  100% {
-    transform: translateY(-120vh) scale(1.2);
-    opacity: 0;
+
+  .project-card {
+    padding: 1.5rem;
   }
-}
 
-/* === Nav Links === */
-.nav-links {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  opacity: 0;
-  transition: opacity 1s ease 0.8s;
-}
+  .hero-tagline {
+    font-size: 1rem;
+  }
 
-.nav-overlay.open .nav-links {
-  opacity: 1;
-}
+  #hamburger,
+  #hamburger-close {
+    width: 24px;
+    height: 18px;
+    top: 1rem;
+    right: 1rem;
+  }
 
-.nav-links ul {
-  list-style: none;
-  text-align: center;
-  padding: 0;
-}
-
-.nav-links li {
-  margin: 1.5rem 0;
-}
-
-.nav-links a {
-  color: white;
-  font-size: 2rem;
-  font-weight: 700;
-  text-decoration: none;
-  transition: opacity 0.3s;
-}
-
-.nav-links a:hover {
-  opacity: 0.8;
-  transform: scale(1.05);
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-body.no-scroll {
-  overflow: hidden;
+  #hamburger span,
+  #hamburger-close span {
+    height: 2px;
+  }
 }

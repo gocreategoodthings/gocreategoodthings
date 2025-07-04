@@ -62,9 +62,19 @@ h1, h2, h3, h4 {
 
 /* === HERO SECTION === */
 .hero {
-  padding: 7rem 1rem 9rem;
-  text-align: center;
-  background: #fefefe;
+  width: 100vw;
+  height: 100vh;
+  background: 
+    linear-gradient(to bottom, rgba(20, 20, 20, 0.98), rgba(15, 15, 15, 1)),
+    url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-repeat: repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
 }
 
 .hero-inner {
@@ -94,6 +104,7 @@ main {
 section {
   margin: 6rem 0;
   scroll-margin-top: 100px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05); /* NEW */
 }
 
 h2 {
@@ -373,11 +384,12 @@ section.about {
 .site-footer {
   position: relative;
   text-align: center;
-  background: #000; /* fallback color */
-  background-image: url('footer-bg.png');
+  background: 
+    linear-gradient(to bottom, rgba(20, 20, 20, 0.98), rgba(15, 15, 15, 1)),
+    url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+  background-blend-mode: overlay;
   background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-repeat: repeat;
   color: #fff;
   padding: 6rem 1rem 4rem;
   font-size: 0.9rem;

@@ -79,7 +79,11 @@ nav a {
   font-weight: 600;
 }
 
+/* === HAMBURGER STYLES === */
 .hamburger {
+  position: fixed;
+  top: 2rem;
+  right: 1.5rem;
   width: 30px;
   height: 22px;
   display: flex;
@@ -87,15 +91,13 @@ nav a {
   justify-content: space-between;
   cursor: pointer;
   z-index: 10001;
-  position: fixed;
-  top: 2rem;
-  right: 1.5rem;
   transition: transform 0.3s ease;
 }
 
 .hamburger span {
   display: block;
   height: 3px;
+  width: 100%;
   background: #fff;
   border-radius: 2px;
   transition: all 0.3s ease;
@@ -105,17 +107,24 @@ nav a {
   transform: scaleX(1.1);
 }
 
-/* Animate to "X" when nav is open */
-.nav-overlay.open .hamburger span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+/* Animate into "X" */
+.hamburger.open span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
 }
 
-.nav-overlay.open .hamburger span:nth-child(2) {
+.hamburger.open span:nth-child(2) {
   opacity: 0;
 }
 
-.nav-overlay.open .hamburger span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+@media (max-width: 600px) {
+  .hamburger {
+    top: 1.5rem;
+    right: 1rem;
+  }
 }
 
 .hero {

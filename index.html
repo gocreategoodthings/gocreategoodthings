@@ -17,28 +17,22 @@
   <header class="site-header">
     <div class="header-inner">
       <h1 class="brand-name">Go Create Good Things</h1>
-      <button class="hamburger-icon" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <div class="hamburger" id="hamburger">
         <span></span>
         <span></span>
         <span></span>
-      </button>
+      </div>
     </div>
   </header>
 
   <div class="nav-overlay" id="navOverlay">
-    <button class="hamburger-icon" id="hamburger-close" aria-label="Close menu" aria-expanded="true">
+    <div class="hamburger close-btn" id="hamburger-close">
       <span></span>
       <span></span>
       <span></span>
-    </button>
-
-    <div class="bubble-container">
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
     </div>
+
+    <div class="bubble-container"></div>
 
     <div class="nav-links">
       <ul>
@@ -122,11 +116,8 @@
       navOverlay.classList.toggle('open');
       hamburger.classList.toggle('open');
       hamburgerClose.classList.toggle('open');
-      const isOpen = navOverlay.classList.contains('open');
-      hamburger.setAttribute('aria-expanded', isOpen);
-      hamburgerClose.setAttribute('aria-expanded', isOpen);
-      document.body.classList.toggle('no-scroll', isOpen);
-      if (isOpen) {
+      document.body.classList.toggle('no-scroll');
+      if (navOverlay.classList.contains('open')) {
         setTimeout(triggerBubbles, 900);
       }
     }
@@ -140,8 +131,6 @@
         hamburger.classList.remove('open');
         hamburgerClose.classList.remove('open');
         document.body.classList.remove('no-scroll');
-        hamburger.setAttribute('aria-expanded', 'false');
-        hamburgerClose.setAttribute('aria-expanded', 'false');
       });
     });
   </script>

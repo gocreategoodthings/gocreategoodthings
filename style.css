@@ -438,3 +438,7 @@ section.contact {
     max-width: 240px;
   }
 }
+
+body.no-scroll {
+  overflow: hidden;
+}

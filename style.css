@@ -307,8 +307,28 @@ h2 {
 }
 
 /* === ABOUT / CONTACT === */
-section.about, section.contact {
-  background: #fafafa;
+section.about {
+  background-color: #ffffff;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 5rem 1rem;
+  text-align: center;
+}
+
+section.contact {
+  background-color: #f4f4f4;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 5rem 1rem;
+  text-align: center;
 }
 
 .about p, .contact p {

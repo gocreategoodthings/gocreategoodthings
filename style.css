@@ -26,7 +26,7 @@ h1, h2, h3, h4, .logo {
 .header-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1.5rem 1.5rem; /* Top/Bottom: 1.5rem, Left/Right: 1.5rem */
+  padding: 1.5rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -74,48 +74,74 @@ nav a {
   font-weight: 600;
 }
 
-/* === HAMBURGER STYLES === */
-.hamburger {
-  position: fixed;
-  top: 2rem;
-  right: 1.5rem;
+/* === PRO UNIFIED HAMBURGER STYLES === */
+.hamburger-icon {
   width: 30px;
-  height: 22px;
+  height: 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   cursor: pointer;
+  padding: 0.25rem;
   z-index: 10001;
+  transition: transform 0.3s ease;
 }
 
-.hamburger span {
+.hamburger-icon span {
   display: block;
+  width: 100%;
   height: 3px;
-  background-color: #fff;
+  background-color: currentColor;
   border-radius: 2px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
 }
 
-.hamburger:hover span {
-  transform: scaleX(1.1);
+#hamburger {
+  position: fixed;
+  top: 2rem;
+  right: 1.5rem;
+  color: #111;
 }
 
-/* Open animation for hamburger */
-.hamburger.open span:nth-child(1) {
+#hamburger-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  color: #fff;
+}
+
+/* Animation states */
+.hamburger-icon.open span:nth-child(1) {
   transform: translateY(9px) rotate(45deg);
 }
 
-.hamburger.open span:nth-child(2) {
+.hamburger-icon.open span:nth-child(2) {
   opacity: 0;
 }
 
-.hamburger.open span:nth-child(3) {
+.hamburger-icon.open span:nth-child(3) {
   transform: translateY(-9px) rotate(-45deg);
 }
 
-.hamburger span {
-  transition: all 0.3s ease;
+.hamburger-icon:hover {
+  transform: scale(1.05);
 }
+
+@media (max-width: 480px) {
+  .hamburger-icon {
+    top: 1rem;
+    right: 1rem;
+    width: 24px;
+    height: 18px;
+  }
+
+  .hamburger-icon span {
+    height: 2px;
+  }
+}
+
+/* === END HAMBURGER === */
 
 .hero {
   padding: 4rem 1rem 6rem;
@@ -310,7 +336,6 @@ section.contact {
   color: #007aff;
 }
 
-/* Mobile nav toggle */
 .site-nav {
   display: none;
   flex-direction: column;
@@ -434,59 +459,4 @@ section.contact {
 
 body.no-scroll {
   overflow: hidden;
-}
-
-/* === Hamburger Close Button inside Nav Overlay === */
-#hamburger-close {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  z-index: 10001;
-  width: 28px;
-  height: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  padding: 0.25rem;
-  transition: transform 0.3s ease;
-}
-
-#hamburger-close span {
-  display: block;
-  width: 100%;
-  height: 3px;
-  background-color: #fff;
-  border-radius: 2px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-#hamburger-close.open span:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
-}
-
-#hamburger-close.open span:nth-child(2) {
-  opacity: 0;
-}
-
-#hamburger-close.open span:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
-}
-
-#hamburger-close:hover {
-  transform: scale(1.05);
-}
-
-@media (max-width: 480px) {
-  #hamburger-close {
-    top: 1rem;
-    right: 1rem;
-    width: 24px;
-    height: 18px;
-  }
-
-  #hamburger-close span {
-    height: 2px;
-  }
 }

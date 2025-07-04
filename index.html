@@ -4,26 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Go Create Good Things</title>
-  <meta name="description" content="A custom portfolio site by a designer who builds brands with purpose. Let's Go Create Good Things together.">
+  <meta name="description" content="A custom portfolio site by a designer who builds brands with purpose. Let's Go Create Good Things together." />
   <meta property="og:title" content="Go Create Good Things" />
   <meta property="og:description" content="A branding, logo design, and video portfolio built for impact." />
   <meta property="og:image" content="gcgt-favicon-colored-transparent.png" />
   <meta property="og:type" content="website" />
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.png" />
 </head>
 <body>
   <header class="site-header">
     <div class="header-inner">
       <h1 class="brand-name">Go Create Good Things</h1>
-      <button 
-        class="hamburger-icon" 
-        id="hamburger" 
-        aria-label="Open Navigation Menu" 
-        aria-expanded="false" 
-        aria-controls="navOverlay"
-      >
+      <button class="hamburger-icon" id="hamburger">
         <span></span>
         <span></span>
         <span></span>
@@ -31,59 +25,62 @@
     </div>
   </header>
 
-  <div class="nav-overlay" id="navOverlay" aria-hidden="true">
-    <button 
-      class="hamburger-icon" 
-      id="hamburger-close" 
-      aria-label="Close Navigation Menu"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
+  <div class="nav-overlay" id="navOverlay">
     <div class="bubble-container"></div>
-
-    <nav class="nav-links" role="navigation">
+    <nav class="nav-links">
       <ul>
         <li><a href="#selected-work">Work</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <div class="socials">
+        <a href="https://instagram.com/gocreategoodthings" target="_blank">Instagram</a>
+        <a href="mailto:gocreategoodthings@gmail.com">Email</a>
+      </div>
     </nav>
   </div>
 
   <main>
-    <section class="hero" id="home">
-      <img src="GCGT_Logo-07.png" alt="Go Create Good Things — Brand Logo" class="hero-logo" />
+    <section class="hero parallax">
+      <img src="GCGT_Logo-07.png" alt="Go Create Good Things Logo" class="hero-logo" />
+      <h2 class="hero-tagline">Design with purpose. Impact with creativity.</h2>
     </section>
 
     <section class="projects" id="selected-work">
       <h2>Selected Work</h2>
       <div class="project-grid">
         <a href="projects/project-1.html" class="project-card">
-          <h4>Project Title 1</h4>
-          <p>Short description of the project.</p>
+          <img src="images/project1.jpg" alt="Project 1 Thumbnail">
+          <div class="project-text">
+            <h4>Adventure Co Branding</h4>
+            <p>Crafted an outdoor lifestyle brand rooted in grit and glory.</p>
+          </div>
         </a>
         <a href="projects/project-2.html" class="project-card">
-          <h4>Project Title 2</h4>
-          <p>Another quick blurb about what you did.</p>
+          <img src="images/project2.jpg" alt="Project 2 Thumbnail">
+          <div class="project-text">
+            <h4>Sunrise Shack Rebrand</h4>
+            <p>Vibrant design for Hawaii’s happiest coffee bar.</p>
+          </div>
         </a>
         <a href="projects/project-3.html" class="project-card">
-          <h4>Project Title 3</h4>
-          <p>Something fun, punchy, and scroll-stopping.</p>
+          <img src="images/project3.jpg" alt="Project 3 Thumbnail">
+          <div class="project-text">
+            <h4>Seager Co Film Series</h4>
+            <p>Rugged storytelling meets clean cinematic polish.</p>
+          </div>
         </a>
       </div>
     </section>
 
     <section class="about" id="about">
       <h2>About</h2>
-      <p>Great design should move people, not just look good. That’s what I’m chasing. Born in Texas, building in Oklahoma, and driven by faith, I believe creative work has the power to shift perspectives and make a lasting impact on how we see and engage with the world. Let’s Go Create Good Things together.</p>
+      <p>Great design should move people. That’s what I’m chasing. Born in Texas, building in Oklahoma, and driven by faith — I believe creativity is a gift meant to stir hearts, build legacy, and shift culture. Let’s go create good things, together.</p>
     </section>
 
     <section class="contact" id="contact">
       <h2>Let’s Talk</h2>
-      <p>Have an idea, a brand, or something that matters? I’d love to hear about it.</p>
+      <p>Got a brand, a project, or an idea worth pursuing? I’d love to hear from you.</p>
       <p><a href="mailto:gocreategoodthings@gmail.com">→ gocreategoodthings@gmail.com</a></p>
     </section>
   </main>
@@ -94,7 +91,6 @@
 
   <script>
     const hamburger = document.getElementById('hamburger');
-    const hamburgerClose = document.getElementById('hamburger-close');
     const navOverlay = document.getElementById('navOverlay');
     const navLinks = document.querySelectorAll('.nav-links a');
     const bubbleContainer = document.querySelector('.bubble-container');
@@ -125,25 +121,26 @@
     function toggleNav() {
       navOverlay.classList.toggle('open');
       hamburger.classList.toggle('open');
-      hamburger.setAttribute('aria-expanded', navOverlay.classList.contains('open'));
-      navOverlay.setAttribute('aria-hidden', !navOverlay.classList.contains('open'));
       document.body.style.overflow = navOverlay.classList.contains('open') ? 'hidden' : '';
       if (navOverlay.classList.contains('open')) {
-        setTimeout(triggerBubbles, 900);
+        setTimeout(triggerBubbles, 800);
       }
     }
 
     hamburger.addEventListener('click', toggleNav);
-    hamburgerClose.addEventListener('click', toggleNav);
-
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
         navOverlay.classList.remove('open');
         hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-        navOverlay.setAttribute('aria-hidden', 'true');
         document.body.style.overflow = '';
       });
+    });
+
+    // Optional: Parallax scroll effect
+    window.addEventListener('scroll', () => {
+      const hero = document.querySelector('.parallax');
+      let offset = window.scrollY;
+      hero.style.backgroundPositionY = offset * 0.5 + 'px';
     });
   </script>
 </body>

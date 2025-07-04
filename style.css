@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   background: #fefefe;
@@ -13,14 +17,20 @@ body {
   padding: 0 1.5rem;
 }
 
-h1, h2, h3, h4, .logo {
+h1, h2, h3, h4 {
   font-family: 'Space Grotesk', sans-serif;
+}
+
+:target::before {
+  content: "";
+  display: block;
+  height: 100px;
+  margin-top: -100px;
 }
 
 /* === HEADER === */
 .site-header {
   padding: 2rem 1.5rem;
-  background: transparent;
   position: relative;
   z-index: 10;
   border-bottom: 1px solid #eee;
@@ -39,7 +49,6 @@ h1, h2, h3, h4, .logo {
 .brand-name {
   font-size: 1.6rem;
   font-weight: 700;
-  margin: 0;
 }
 
 .brand-name:hover {
@@ -50,16 +59,16 @@ h1, h2, h3, h4, .logo {
 
 /* === HERO SECTION === */
 .hero {
-  padding: 4rem 1rem 6rem;
+  padding: 6rem 1rem 8rem;
   text-align: center;
 }
 
 .hero-logo {
   max-width: 320px;
-  margin-bottom: 2rem;
-  animation: pop 0.8s ease;
   width: 100%;
   height: auto;
+  margin-bottom: 2rem;
+  animation: pop 0.8s ease;
 }
 
 @keyframes pop {
@@ -67,17 +76,16 @@ h1, h2, h3, h4, .logo {
   100% { transform: scale(1); opacity: 1; }
 }
 
-/* === SECTION === */
-section {
-  margin: 4rem 0;
-  padding: 0 1.25rem;
-  scroll-margin-top: 100px;
-}
-
+/* === MAIN CONTENT === */
 main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
+}
+
+section {
+  margin: 6rem 0;
+  scroll-margin-top: 100px;
 }
 
 h2 {
@@ -88,6 +96,7 @@ h2 {
   line-height: 1.2;
 }
 
+/* === PROJECTS GRID === */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -98,12 +107,10 @@ h2 {
   background: #f6f6f6;
   padding: 2rem;
   border-radius: 12px;
-  text-align: left;
-  font-weight: 500;
-  transition: all 0.2s ease;
+  border: 1px solid #e0e0e0;
   text-decoration: none;
   color: #111;
-  border: 1px solid #e0e0e0;
+  transition: all 0.2s ease;
 }
 
 .project-card:hover {
@@ -118,26 +125,25 @@ h2 {
   margin-bottom: 0.5rem;
 }
 
-/* === ABOUT & CONTACT === */
+/* === ABOUT & CONTACT SECTIONS === */
 section.about,
 section.contact {
   padding: 5rem 1rem;
   text-align: center;
 }
 
-section.about {
-  background-color: #ffffff;
+.about {
+  background: #fff;
 }
 
-section.contact {
-  background-color: #f4f4f4;
+.contact {
+  background: #f4f4f4;
 }
 
 .about p,
 .contact p {
   max-width: 700px;
   margin: 0 auto 1.5rem;
-  line-height: 1.6;
   font-size: 1.1rem;
 }
 
@@ -154,11 +160,7 @@ section.contact {
 /* === NAV OVERLAY === */
 .nav-overlay {
   position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  inset: 0;
   background: linear-gradient(to top, #0F3D4A, #134e5e, #1f6a75);
   transform: translateX(100%);
   transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1);
@@ -211,51 +213,7 @@ section.contact {
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-/* === BUBBLES === */
-.bubble-container {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 1;
-  opacity: 0;
-  transition: opacity 0.8s ease;
-}
-
-.bubble-container.show {
-  opacity: 1;
-}
-
-.bubble {
-  position: absolute;
-  bottom: -60px;
-  width: 12px;
-  height: 12px;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  animation: rise 6s linear infinite;
-  opacity: 0.9;
-  filter: blur(1px);
-}
-
-@keyframes rise {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 0.9;
-  }
-  50% {
-    opacity: 0.4;
-  }
-  100% {
-    transform: translateY(-120vh) scale(1.2);
-    opacity: 0;
-  }
-}
-
-/* === HAMBURGER === */
+/* === HAMBURGER ICON === */
 .hamburger-icon {
   position: fixed;
   top: 2rem;
@@ -289,9 +247,11 @@ section.contact {
 .hamburger-icon.open span:nth-child(1) {
   transform: translateY(9px) rotate(45deg);
 }
+
 .hamburger-icon.open span:nth-child(2) {
   opacity: 0;
 }
+
 .hamburger-icon.open span:nth-child(3) {
   transform: translateY(-9px) rotate(-45deg);
 }
@@ -299,6 +259,39 @@ section.contact {
 .hamburger-icon:focus {
   outline: 2px solid #F99840;
   outline-offset: 4px;
+}
+
+/* === BUBBLES === */
+.bubble-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.bubble-container.show {
+  opacity: 1;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -60px;
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: rise 6s linear infinite;
+  filter: blur(1px);
+  opacity: 0.9;
+}
+
+@keyframes rise {
+  0% { transform: translateY(0) scale(1); opacity: 0.9; }
+  50% { opacity: 0.4; }
+  100% { transform: translateY(-120vh) scale(1.2); opacity: 0; }
 }
 
 /* === FOOTER === */
@@ -309,19 +302,12 @@ footer {
   color: #777;
 }
 
-/* === SMOOTH SCROLL & OFFSET === */
-html {
-  scroll-behavior: smooth;
-}
-
-:target::before {
-  content: "";
-  display: block;
-  height: 100px;
-  margin-top: -100px;
-}
-
+/* === MOBILE === */
 @media (max-width: 600px) {
+  .hero-logo {
+    max-width: 280px;
+  }
+
   .project-grid {
     gap: 1rem;
   }
@@ -330,26 +316,22 @@ html {
     padding: 1.5rem;
   }
 
-  .hero-tagline {
-    font-size: 1rem;
-  }
-
-  h3 {
-    font-size: 1.6rem;
-  }
-
-  section {
-    margin: 4rem 0;
-  }
-
   .hamburger-icon {
-    width: 26px;
-    height: 20px;
     top: 1rem;
     right: 1rem;
+    width: 26px;
+    height: 20px;
   }
 
   .hamburger-icon span {
     height: 2px;
+  }
+
+  .hero {
+    padding-top: 4rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
   }
 }

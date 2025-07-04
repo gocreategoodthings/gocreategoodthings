@@ -49,11 +49,6 @@ h1, h2, h3, h4, .logo {
   margin: 0;
 }
 
-@media (min-width: 768px) {
-  header {
-    flex-wrap: nowrap;
-  }
-
   .logo {
     margin-bottom: 0;
   }
@@ -95,7 +90,7 @@ nav a {
   justify-content: space-between;
   cursor: pointer;
   z-index: 1000;
-  position: relative;
+  margin-left: auto;
 }
 
 @media (min-width: 768px) {

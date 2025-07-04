@@ -46,11 +46,6 @@ h1, h2, h3, h4, .logo {
   cursor: default;
 }
 
-  .logo {
-    margin-bottom: 0;
-  }
-} 
-
 .logo {
   text-align: center;
   margin-bottom: 1rem;
@@ -80,7 +75,6 @@ nav a {
 }
 
 /* === HAMBURGER STYLES === */
-/* === HAMBURGER STYLES === */
 .hamburger {
   position: fixed;
   top: 2rem;
@@ -108,7 +102,7 @@ nav a {
 
 /* Open animation for hamburger */
 .hamburger.open span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: translateY(9px) rotate(45deg);
 }
 
 .hamburger.open span:nth-child(2) {
@@ -116,19 +110,11 @@ nav a {
 }
 
 .hamburger.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+  transform: translateY(-9px) rotate(-45deg);
 }
 
-.hamburger.open span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.nav-overlay.open .hamburger span:nth-child(2) {
-  opacity: 0;
-}
-
-.nav-overlay.open .hamburger span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+.hamburger span {
+  transition: all 0.3s ease;
 }
 
 .hero {
@@ -260,6 +246,7 @@ footer {
   height: 80px;
   margin-top: -80px;
 }
+
 html {
   scroll-behavior: smooth;
 }
@@ -445,59 +432,30 @@ section.contact {
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-@keyframes fadeInNav {
-  to {
-    opacity: 1;
-  }
-}
-
-@media (max-width: 600px) {
-  .hero {
-    padding: 3rem 1rem 4rem;
-  }
-
-  .hero-logo {
-    max-width: 240px;
-  }
-}
-
 body.no-scroll {
   overflow: hidden;
 }
 
-/* === Hamburger Animation === */
-.hamburger.open span:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
-}
-
-.hamburger.open span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.open span:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
-}
-
-.hamburger span {
-  transition: all 0.3s ease;
-}
-
-/* === Secondary Hamburger Close Button inside Overlay === */
+/* === Hamburger Close Button inside Nav Overlay === */
 #hamburger-close {
   position: absolute;
-  top: 2rem;
+  top: 1.5rem;
   right: 1.5rem;
-  width: 30px;
-  height: 22px;
+  z-index: 10001;
+  width: 28px;
+  height: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   cursor: pointer;
-  z-index: 10001;
+  padding: 0.25rem;
+  transition: transform 0.3s ease;
 }
 
 #hamburger-close span {
   display: block;
+  width: 100%;
   height: 3px;
   background-color: #fff;
   border-radius: 2px;
@@ -505,7 +463,7 @@ body.no-scroll {
 }
 
 #hamburger-close.open span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: translateY(9px) rotate(45deg);
 }
 
 #hamburger-close.open span:nth-child(2) {
@@ -513,32 +471,22 @@ body.no-scroll {
 }
 
 #hamburger-close.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+  transform: translateY(-9px) rotate(-45deg);
 }
 
-/* Fix visibility of hamburger and close icon */
-
-#hamburger span {
-  background-color: #111; /* Dark on light bg */
+#hamburger-close:hover {
+  transform: scale(1.05);
 }
 
-#hamburger-close {
-  position: absolute;
-  top: 2rem;
-  right: 1.5rem;
-  z-index: 10001;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 22px;
-  cursor: pointer;
-}
+@media (max-width: 480px) {
+  #hamburger-close {
+    top: 1rem;
+    right: 1rem;
+    width: 24px;
+    height: 18px;
+  }
 
-#hamburger-close span {
-  display: block;
-  height: 3px;
-  background-color: #fff; /* White on dark overlay */
-  border-radius: 2px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  #hamburger-close span {
+    height: 2px;
+  }
 }

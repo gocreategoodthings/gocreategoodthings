@@ -86,13 +86,16 @@ nav a {
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
-  z-index: 1000;
-  margin-left: auto;
+  z-index: 10001; /* ensures it’s above the nav */
+  position: fixed;
+  top: 2rem;
+  right: 1.5rem;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 600px) {
   .hamburger {
-    margin-right: 0.5rem;
+    top: 1.5rem;
+    right: 1rem;
   }
 }
 

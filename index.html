@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Go Create Good Things</title>
-  <meta name="description" content="A portfolio site by a designer who builds brands with purpose. Let’s Go Create Good Things together." />
+  <meta name="description" content="A custom portfolio site by a designer who builds brands with purpose. Let's Go Create Good Things together." />
   <meta property="og:title" content="Go Create Good Things" />
-  <meta property="og:description" content="Branding, logo, and video design portfolio built for impact." />
+  <meta property="og:description" content="A branding, logo design, and video portfolio built for impact." />
   <meta property="og:image" content="gcgt-favicon-colored-transparent.png" />
   <meta property="og:type" content="website" />
   <link rel="stylesheet" href="style.css" />
@@ -31,8 +31,6 @@
       <ul>
         <li><a href="#selected-work">Work</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#process">Process</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="socials">
@@ -46,24 +44,6 @@
     <section class="hero parallax">
       <img src="GCGT_Logo-07.png" alt="Go Create Good Things Logo" class="hero-logo" />
       <h2 class="hero-tagline">Design with purpose. Impact with creativity.</h2>
-    </section>
-
-    <section class="values-section">
-      <h2>Core Values</h2>
-      <div class="value-cards">
-        <div class="value-card">
-          <h3>Faith First</h3>
-          <p>Everything I build is rooted in something bigger than myself.</p>
-        </div>
-        <div class="value-card">
-          <h3>Craft Over Flash</h3>
-          <p>Clean, thoughtful design beats trends every time.</p>
-        </div>
-        <div class="value-card">
-          <h3>Built For Legacy</h3>
-          <p>Timeless brands with lasting impact. That’s the goal.</p>
-        </div>
-      </div>
     </section>
 
     <section class="projects" id="selected-work">
@@ -93,49 +73,26 @@
       </div>
     </section>
 
-    <section class="process" id="process">
-      <h2>The Branding Process</h2>
-      <div class="process-steps">
-        <div class="step">
-          <h3>01 — Strategy</h3>
-          <p>Clarify your mission, vision, and vibe.</p>
-        </div>
-        <div class="step">
-          <h3>02 — Identity</h3>
-          <p>Design logos, typography, color, and imagery that click.</p>
-        </div>
-        <div class="step">
-          <h3>03 — Launch</h3>
-          <p>Assets, socials, packaging, and rollout plans that work.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="featured-video">
-      <h2>Featured Film</h2>
-      <div class="video-wrapper">
-        <img src="images/video-poster.jpg" alt="Video Placeholder">
-        <a href="#" class="watch-cta">Watch Reel →</a>
-      </div>
-    </section>
-
-    <section class="testimonials" id="testimonials">
-      <h2>Words From People</h2>
-      <div class="testimonial-carousel">
-        <blockquote>
-          “Working with Go Create Good Things was a total game-changer. I’ve never been more proud of my brand.”
-          <cite>— Jordan M., Coffee Founder</cite>
-        </blockquote>
-        <blockquote>
-          “Every design had purpose. Every call made progress. I’d recommend them to anyone serious about storytelling.”
-          <cite>— Alana G., Creative Director</cite>
-        </blockquote>
-      </div>
-    </section>
-
     <section class="about" id="about">
       <h2>About</h2>
       <p>Great design should move people. That’s what I’m chasing. Born in Texas, building in Oklahoma, and driven by faith — I believe creativity is a gift meant to stir hearts, build legacy, and shift culture. Let’s go create good things, together.</p>
+    </section>
+
+    <section class="gallery">
+      <h2>Creative Highlights</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="images/highlight1.jpg" alt="Highlight 1"></div>
+        <div class="gallery-item"><img src="images/highlight2.jpg" alt="Highlight 2"></div>
+        <div class="gallery-item"><img src="images/highlight3.jpg" alt="Highlight 3"></div>
+      </div>
+    </section>
+
+    <section class="testimonial">
+      <h2>What People Say</h2>
+      <blockquote>
+        "Working with Go Create Good Things changed our entire brand presence."
+        <footer>— A Happy Client</footer>
+      </blockquote>
     </section>
 
     <section class="contact" id="contact">
@@ -198,10 +155,8 @@
 
     window.addEventListener('scroll', () => {
       const hero = document.querySelector('.parallax');
-      if (hero) {
-        let offset = window.scrollY;
-        hero.style.backgroundPositionY = offset * 0.5 + 'px';
-      }
+      let offset = window.scrollY;
+      hero.style.backgroundPositionY = offset * 0.5 + 'px';
     });
   </script>
 </body>

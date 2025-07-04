@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Go Create Good Things</title>
   <meta name="description" content="A custom portfolio site by a designer who builds brands with purpose. Let's Go Create Good Things together.">
   <meta property="og:title" content="Go Create Good Things" />
@@ -17,42 +17,44 @@
   <header class="site-header">
     <div class="header-inner">
       <h1 class="brand-name">Go Create Good Things</h1>
-      <div class="hamburger-icon" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <button 
+        class="hamburger-icon" 
+        id="hamburger" 
+        aria-label="Open Navigation Menu" 
+        aria-expanded="false" 
+        aria-controls="navOverlay"
+      >
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </button>
     </div>
   </header>
 
-  <div class="nav-overlay" id="navOverlay">
-    <!-- Close hamburger inside overlay -->
-    <div class="hamburger-icon" id="hamburger-close" aria-label="Close menu" aria-expanded="true">
+  <div class="nav-overlay" id="navOverlay" aria-hidden="true">
+    <button 
+      class="hamburger-icon" 
+      id="hamburger-close" 
+      aria-label="Close Navigation Menu"
+    >
       <span></span>
       <span></span>
       <span></span>
-    </div>
+    </button>
 
-    <!-- Bubbles will float after slide-in -->
-    <div class="bubble-container">
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-      <div class="bubble"></div>
-    </div>
+    <div class="bubble-container"></div>
 
-    <div class="nav-links">
+    <nav class="nav-links" role="navigation">
       <ul>
         <li><a href="#selected-work">Work</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-    </div>
+    </nav>
   </div>
 
   <main>
-    <section class="hero">
+    <section class="hero" id="home">
       <img src="GCGT_Logo-07.png" alt="Go Create Good Things — Brand Logo" class="hero-logo" />
     </section>
 
@@ -90,9 +92,8 @@
     <p>© 2025 Go Create Good Things</p>
   </footer>
 
-  <!-- ✅ Final JS Fix for Nav/Hamburger -->
   <script>
-    const hamburger = document.querySelector('.hamburger-icon#hamburger');
+    const hamburger = document.getElementById('hamburger');
     const hamburgerClose = document.getElementById('hamburger-close');
     const navOverlay = document.getElementById('navOverlay');
     const navLinks = document.querySelectorAll('.nav-links a');
@@ -124,8 +125,9 @@
     function toggleNav() {
       navOverlay.classList.toggle('open');
       hamburger.classList.toggle('open');
-      hamburgerClose.classList.toggle('open');
-      document.body.classList.toggle('no-scroll');
+      hamburger.setAttribute('aria-expanded', navOverlay.classList.contains('open'));
+      navOverlay.setAttribute('aria-hidden', !navOverlay.classList.contains('open'));
+      document.body.style.overflow = navOverlay.classList.contains('open') ? 'hidden' : '';
       if (navOverlay.classList.contains('open')) {
         setTimeout(triggerBubbles, 900);
       }
@@ -138,8 +140,9 @@
       link.addEventListener('click', () => {
         navOverlay.classList.remove('open');
         hamburger.classList.remove('open');
-        hamburgerClose.classList.remove('open');
-        document.body.classList.remove('no-scroll');
+        hamburger.setAttribute('aria-expanded', 'false');
+        navOverlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
       });
     });
   </script>

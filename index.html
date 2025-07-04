@@ -4,9 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Go Create Good Things</title>
-  <meta name="description" content="A custom portfolio site by a designer who builds brands with purpose. Let's Go Create Good Things together." />
+  <meta name="description" content="A portfolio site by a designer who builds brands with purpose. Let's Go Create Good Things together." />
+  <meta property="og:title" content="Go Create Good Things" />
+  <meta property="og:description" content="Branding, design, and video work built for impact." />
+  <meta property="og:image" content="gcgt-favicon-colored-transparent.png" />
+  <meta property="og:type" content="website" />
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png" />
 </head>
 <body>
@@ -25,7 +29,7 @@
       <ul>
         <li><a href="#selected-work">Work</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#extras">Extras</a></li>
+        <li><a href="#process">Process</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="socials">
@@ -37,32 +41,32 @@
 
   <main>
     <section class="hero parallax">
-      <img src="https://unsplash.it/400/200?random&gravity=center" alt="Go Create Good Things Logo" class="hero-logo" />
+      <img src="https://via.placeholder.com/240x240" alt="GCGT Logo" class="hero-logo" />
       <h2 class="hero-tagline">Design with purpose. Impact with creativity.</h2>
     </section>
 
     <section class="projects" id="selected-work">
       <h2>Selected Work</h2>
       <div class="project-grid">
-        <a href="projects/project-1.html" class="project-card">
-          <img src="https://unsplash.it/400/300?random=1" alt="Project 1 Thumbnail">
+        <a href="#" class="project-card">
+          <img src="https://via.placeholder.com/300x200" alt="Project 1">
           <div class="project-text">
             <h4>Adventure Co Branding</h4>
-            <p>Crafted an outdoor lifestyle brand rooted in grit and glory.</p>
+            <p>Outdoor lifestyle brand rooted in grit and glory.</p>
           </div>
         </a>
-        <a href="projects/project-2.html" class="project-card">
-          <img src="https://unsplash.it/400/300?random=2" alt="Project 2 Thumbnail">
+        <a href="#" class="project-card">
+          <img src="https://via.placeholder.com/300x200" alt="Project 2">
           <div class="project-text">
             <h4>Sunrise Shack Rebrand</h4>
             <p>Vibrant design for Hawaii’s happiest coffee bar.</p>
           </div>
         </a>
-        <a href="projects/project-3.html" class="project-card">
-          <img src="https://unsplash.it/400/300?random=3" alt="Project 3 Thumbnail">
+        <a href="#" class="project-card">
+          <img src="https://via.placeholder.com/300x200" alt="Project 3">
           <div class="project-text">
             <h4>Seager Co Film Series</h4>
-            <p>Rugged storytelling meets clean cinematic polish.</p>
+            <p>Rugged storytelling meets cinematic polish.</p>
           </div>
         </a>
       </div>
@@ -70,24 +74,38 @@
 
     <section class="about" id="about">
       <h2>About</h2>
-      <img src="https://unsplash.it/800/400?random=4" alt="About Section Visual" class="section-image" />
-      <p>Great design should move people. That’s what I’m chasing. Born in Texas, building in Oklahoma, and driven by faith — I believe creativity is a gift meant to stir hearts, build legacy, and shift culture. Let’s go create good things, together.</p>
+      <p>Born in Texas, building in Oklahoma, and driven by faith — I believe creativity is a gift meant to stir hearts, build legacy, and shift culture. Let’s go create good things, together.</p>
     </section>
 
-    <section class="extras" id="extras">
-      <h2>Creative Extras</h2>
-      <p>Beyond client work, I like to get my hands dirty with passion projects, custom fonts, and experiments with motion and sound.</p>
-      <div class="extras-grid">
-        <img src="https://unsplash.it/400/300?random=5" alt="Passion Project 1" />
-        <img src="https://unsplash.it/400/300?random=6" alt="Passion Project 2" />
-        <img src="https://unsplash.it/400/300?random=7" alt="Passion Project 3" />
+    <section class="process" id="process">
+      <div class="process-inner">
+        <div class="process-image">
+          <img src="https://via.placeholder.com/500x600" alt="Photo of Designer" />
+        </div>
+        <div class="process-steps">
+          <h2>How I Work</h2>
+          <div class="step">
+            <img src="https://via.placeholder.com/60" alt="Strategy Icon" />
+            <h4>Strategy</h4>
+            <p>Digging deep to find the why behind your brand.</p>
+          </div>
+          <div class="step">
+            <img src="https://via.placeholder.com/60" alt="Design Icon" />
+            <h4>Design</h4>
+            <p>Translating story into a unique and lasting visual identity.</p>
+          </div>
+          <div class="step">
+            <img src="https://via.placeholder.com/60" alt="Impact Icon" />
+            <h4>Impact</h4>
+            <p>Launching work that makes people feel something.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="contact" id="contact">
       <h2>Let’s Talk</h2>
-      <img src="https://unsplash.it/600/300?random=8" alt="Contact Section Visual" class="section-image" />
-      <p>Got a brand, a project, or an idea worth pursuing? I’d love to hear from you.</p>
+      <p>Got a brand, a project, or an idea worth pursuing? Let’s make something special.</p>
       <p><a href="mailto:gocreategoodthings@gmail.com">→ gocreategoodthings@gmail.com</a></p>
     </section>
   </main>
@@ -143,12 +161,10 @@
       });
     });
 
-    // Optional: Parallax effect
     window.addEventListener('scroll', () => {
       const hero = document.querySelector('.parallax');
-      if (hero) {
-        hero.style.backgroundPositionY = `${window.scrollY * 0.5}px`;
-      }
+      let offset = window.scrollY;
+      hero.style.backgroundPositionY = offset * 0.5 + 'px';
     });
   </script>
 </body>

@@ -80,7 +80,11 @@ nav a {
 }
 
 /* === HAMBURGER STYLES === */
+/* === HAMBURGER STYLES === */
 .hamburger {
+  position: fixed;
+  top: 2rem;
+  right: 1.5rem;
   width: 30px;
   height: 22px;
   display: flex;
@@ -88,23 +92,31 @@ nav a {
   justify-content: space-between;
   cursor: pointer;
   z-index: 10001;
-  position: fixed;
-  top: 2rem;
-  right: 1.5rem;
-  transition: transform 0.3s ease;
 }
 
 .hamburger span {
   display: block;
   height: 3px;
-  background: #fff;
+  background-color: #fff;
   border-radius: 2px;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Optional hover tweak */
 .hamburger:hover span {
   transform: scaleX(1.1);
+}
+
+/* Open animation for hamburger */
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
 }
 
 /* Hamburger animation when nav is open */

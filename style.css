@@ -214,7 +214,6 @@ section.about {
 }
 
 .contact {
-  background: linear-gradient(to bottom, #f4f4f4 0%, #fafafa 100%);
   padding: 8rem 1rem 6rem;
   text-align: center;
   position: relative;
@@ -223,20 +222,6 @@ section.about {
   border-bottom: none;
   width: 100vw;
   margin-left: calc(-1 * (100vw - 100%) / 2);
-}
-
-.contact::after {
-  content: '';
-  position: absolute;
-  bottom: 40px;
-  right: 40px;
-  width: 60px;
-  height: 60px;
-  background: radial-gradient(circle at center, #F99840 0%, transparent 70%);
-  opacity: 0.2;
-  border-radius: 50%;
-  z-index: 0;
-  pointer-events: none;
 }
 
 /* === NAV OVERLAY === */
@@ -379,6 +364,8 @@ section.about {
 /* === FOOTER === */
 .site-footer {
   position: relative;
+  width: 100vw;
+  margin-left: calc(-1 * (100vw - 100%) / 2);
   text-align: center;
   background: linear-gradient(to top, #F99840, #E3603E),
               url('https://www.transparenttextures.com/patterns/asfalt-dark.png');

@@ -71,16 +71,9 @@ h1, h2, h3, h4 {
   width: 100%;
   height: auto;
   margin-bottom: 2rem;
-  animation: pop 0.8s ease;
+  animation: popFadeRise 1s ease forwards;
+  animation-delay: 0.3s;
   opacity: 0;
-  transform: translateY(40px);
-  animation: fadeRise 1s ease-out forwards;
-  animation-delay: 0.5s;
-}
-
-@keyframes pop {
-  0% { transform: scale(0.95); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
 }
 
 /* === MAIN CONTENT === */
@@ -343,9 +336,13 @@ footer {
   }
 }
 
-@keyframes fadeRise {
-  to {
+@keyframes popFadeRise {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translateY(30px);
+  }
+  100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: scale(1) translateY(0);
   }
 }

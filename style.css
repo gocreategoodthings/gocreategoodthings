@@ -1,4 +1,4 @@
-/* === RESET === */
+/* ========== GLOBAL RESET ========== */
 * {
   margin: 0;
   padding: 0;
@@ -7,43 +7,61 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: #fff;
+  font-size: 16px;
+  background: #fff;
 }
 
 body {
   font-family: 'Inter', sans-serif;
   color: #111;
-  overflow-x: hidden;
   line-height: 1.6;
+  overflow-x: hidden;
+  background-color: #ffffff;
 }
 
-/* === GLOBAL CONTAINERS === */
-main {
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
-/* === HEADER === */
-.site-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 2rem 1.5rem;
-  background: transparent;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 10000;
-}
-
-.brand-name {
-  font-size: 1.6rem;
+/* ========== TYPOGRAPHY ========== */
+h1, h2, h3, h4 {
+  font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
-  text-transform: uppercase;
   color: #111;
 }
 
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+
+p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* ========== HEADER ========== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 2rem;
+  z-index: 9999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+}
+
+.brand-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* ========== HAMBURGER MENU ========== */
 .hamburger-icon {
   width: 30px;
   height: 22px;
@@ -53,212 +71,160 @@ main {
   cursor: pointer;
   background: none;
   border: none;
-  z-index: 10001;
+  padding: 0;
 }
 
 .hamburger-icon span {
-  display: block;
   height: 3px;
-  width: 100%;
   background-color: #111;
-  transition: transform 0.3s ease, opacity 0.3s ease;
   border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
 .hamburger-icon.open span:nth-child(1) {
   transform: translateY(9px) rotate(45deg);
 }
+
 .hamburger-icon.open span:nth-child(2) {
   opacity: 0;
 }
+
 .hamburger-icon.open span:nth-child(3) {
   transform: translateY(-9px) rotate(-45deg);
 }
 
-/* === NAV OVERLAY === */
+/* ========== NAV OVERLAY ========== */
 .nav-overlay {
   position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100vh;
-  background: linear-gradient(to bottom, #002B36, #003e4f, #005366);
-  transform: translateX(100%);
-  transition: transform 1s ease;
-  z-index: 9999;
-  display: flex;
+  inset: 0;
+  background: linear-gradient(to bottom, #1c2f3c, #0e1c25);
+  z-index: 9998;
+  display: none;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
 }
 
 .nav-overlay.open {
-  transform: translateX(0%);
-}
-
-.nav-links {
-  text-align: center;
-  color: #fff;
+  display: flex;
 }
 
 .nav-links ul {
   list-style: none;
-  padding: 0;
+  text-align: center;
 }
 
 .nav-links li {
-  margin: 1.5rem 0;
+  margin: 1rem 0;
 }
 
 .nav-links a {
-  color: #fff;
   font-size: 2rem;
-  font-weight: 700;
-  text-decoration: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.nav-links a:hover {
-  opacity: 0.8;
-  transform: scale(1.05);
-}
-
-.socials {
-  margin-top: 3rem;
-}
-
-.socials a {
-  color: #ccc;
-  font-size: 1rem;
-  margin: 0 1rem;
+  color: white;
   text-decoration: none;
 }
 
-/* === HERO === */
+/* ========== HERO ========== */
 .hero {
   height: 100vh;
-  background: linear-gradient(to bottom, #ffffff, #e6f5f7);
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #ffffff, #e8f4f5);
+  padding: 2rem;
   text-align: center;
-  padding: 3rem 1rem;
 }
 
-.hero-logo {
-  width: 220px;
-  margin-bottom: 2rem;
-  animation: pop 0.8s ease forwards;
+.hero img {
+  width: 200px;
+  margin-bottom: 1.5rem;
 }
 
-.hero-tagline {
+.hero h2 {
   font-size: 1.5rem;
-  max-width: 700px;
-  animation: fadeIn 1s ease 0.5s forwards;
-  opacity: 0;
+  font-weight: 600;
 }
 
-/* === PROJECT SECTION === */
-section.projects {
-  padding: 6rem 1.5rem;
+/* ========== PROJECTS SECTION ========== */
+.projects {
+  padding: 6rem 2rem;
   text-align: center;
-}
-
-.projects h2 {
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  font-family: 'Space Grotesk', sans-serif;
 }
 
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+  margin-top: 2rem;
 }
 
 .project-card {
   background: #f7f7f7;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-  text-decoration: none;
-  color: inherit;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
 }
 
 .project-card img {
   width: 100%;
-  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* ========== ABOUT SECTION ========== */
+.about {
+  padding: 6rem 2rem;
+  background-color: #ffffff;
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* ========== HOW I WORK SECTION ========== */
+.how-i-work {
+  background: #f9f9f9;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.how-i-work img {
+  max-width: 150px;
+  margin: 2rem auto;
   display: block;
 }
 
-.project-text {
-  padding: 1.5rem;
-  text-align: left;
-}
-
-.project-text h4 {
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-}
-
-/* === ABOUT SECTION === */
-section.about {
-  background: #ffffff;
-  padding: 6rem 1.5rem;
-  text-align: center;
-}
-
-.about-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.about-content p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
-
-.about-photo {
-  max-width: 400px;
-  border-radius: 16px;
-  margin: 2rem auto;
-}
-
-/* === PROCESS SECTION === */
-.process-section {
-  background: #f9f9f9;
-  padding: 6rem 1.5rem;
-  text-align: center;
-}
-
-.process-icons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.how-i-work .work-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 2rem;
   margin-top: 3rem;
 }
 
-.process-icons div {
-  width: 180px;
-  text-align: center;
+.work-step {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-.process-icons img {
-  width: 60px;
+.work-step img {
+  width: 48px;
+  height: 48px;
   margin-bottom: 1rem;
 }
 
-/* === CONTACT SECTION === */
-section.contact {
-  background: #eaf6f7;
-  padding: 6rem 1.5rem;
+/* ========== CONTACT SECTION ========== */
+.contact {
+  background-color: #eaf5f7;
+  padding: 6rem 2rem;
   text-align: center;
 }
 
@@ -272,51 +238,34 @@ section.contact {
   text-decoration: underline;
 }
 
-/* === FOOTER === */
+/* ========== FOOTER ========== */
 footer {
+  padding: 3rem 1rem;
   text-align: center;
-  padding: 3rem 1.5rem;
   font-size: 0.9rem;
   color: #777;
 }
 
-/* === ANIMATIONS === */
-@keyframes pop {
-  0% {
-    transform: scale(0.95);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-/* === MEDIA QUERIES === */
+/* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
-  .project-grid {
+  h2 {
+    font-size: 2rem;
+  }
+
+  .hero h2 {
+    font-size: 1.2rem;
+  }
+
+  .work-steps {
     grid-template-columns: 1fr;
   }
 
-  .hero-logo {
-    width: 160px;
+  .project-card {
+    padding: 1.5rem;
   }
 
-  .hero-tagline {
-    font-size: 1.1rem;
-  }
-
-  .process-icons {
-    flex-direction: column;
-  }
-
-  .process-icons div {
-    width: 100%;
+  .hamburger-icon {
+    width: 26px;
+    height: 20px;
   }
 }

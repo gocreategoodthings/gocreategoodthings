@@ -358,34 +358,52 @@ section.about {
 
 /* === FOOTER === */
 .site-footer {
+  position: relative;
   text-align: center;
-  background: #f4f4f4;
-  padding: 5rem 1rem 3rem;
+  background: linear-gradient(to bottom, #f9f9f9, #f4f4f4);
+  padding: 6rem 1rem 4rem;
   font-size: 0.9rem;
   color: #222;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
   animation: fadeRise 1s ease-out forwards;
   opacity: 0;
   transform: translateY(30px);
   animation-delay: 0.4s;
+  overflow: hidden;
+}
+
+.footer-wave {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg"><path fill="%23f4f4f4" d="M0,32L48,48C96,64,192,96,288,90.7C384,85,480,43,576,32C672,21,768,43,864,69.3C960,96,1056,128,1152,122.7C1248,117,1344,75,1392,53.3L1440,32V0H1392C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0H0Z"></path></svg>') no-repeat center top;
+  background-size: cover;
+  z-index: 1;
 }
 
 .site-footer p {
   margin-bottom: 1rem;
   font-weight: 400;
   line-height: 1.6;
+  position: relative;
+  z-index: 2;
 }
 
 .social-links {
   font-weight: 500;
   font-size: 0.95rem;
+  position: relative;
+  z-index: 2;
 }
 
 .social-links a {
   color: #247DA0;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
   margin: 0 0.25rem;
+  display: inline-flex;
+  align-items: center;
 }
 
 .social-links a:hover {
@@ -402,11 +420,12 @@ section.about {
 .social-links .arrow {
   margin-left: 0.35rem;
   font-weight: 400;
-  transition: margin-left 0.3s ease;
+  transition: margin-left 0.3s ease, transform 0.3s ease;
 }
 
 .social-links a:hover .arrow {
   margin-left: 0.5rem;
+  transform: translateX(2px);
 }
 
 /* === MOBILE === */

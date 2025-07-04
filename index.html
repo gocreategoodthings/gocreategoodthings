@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Go Create Good Things</title>
-  <meta name="description" content="A custom portfolio site by a designer who builds brands with purpose. Let's Go Create Good Things together." />
+  <meta name="description" content="A custom portfolio site by a designer who builds brands with purpose. Let's Go Create Good Things together.">
   <meta property="og:title" content="Go Create Good Things" />
   <meta property="og:description" content="A branding, logo design, and video portfolio built for impact." />
   <meta property="og:image" content="gcgt-favicon-colored-transparent.png" />
@@ -33,7 +33,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <div class="socials">
+      <div class="social-links">
         <a href="https://instagram.com/gocreategoodthings" target="_blank">Instagram</a>
         <a href="mailto:gocreategoodthings@gmail.com">Email</a>
       </div>
@@ -42,8 +42,10 @@
 
   <main>
     <section class="hero parallax">
-      <img src="GCGT_Logo-07.png" alt="Go Create Good Things Logo" class="hero-logo" />
-      <h2 class="hero-tagline">Design with purpose. Impact with creativity.</h2>
+      <div class="hero-content">
+        <img src="GCGT_Logo-07.png" alt="Go Create Good Things Logo" class="hero-logo" />
+        <h2 class="hero-tagline">Design with purpose. Impact with creativity.</h2>
+      </div>
     </section>
 
     <section class="projects" id="selected-work">
@@ -136,11 +138,13 @@
       });
     });
 
-    // Optional: Parallax scroll effect
+    // Parallax scroll
     window.addEventListener('scroll', () => {
       const hero = document.querySelector('.parallax');
-      let offset = window.scrollY;
-      hero.style.backgroundPositionY = offset * 0.5 + 'px';
+      if (hero) {
+        let offset = window.scrollY;
+        hero.style.backgroundPositionY = offset * 0.5 + 'px';
+      }
     });
   </script>
 </body>

@@ -93,19 +93,19 @@
   </footer>
 
   <script>
-  const hamburger = document.getElementById('hamburger');
-  const navOverlay = document.getElementById('navOverlay');
-  const navLinks = document.querySelectorAll('.nav-links a');
+ const hamburger = document.getElementById('hamburger');
+const navOverlay = document.getElementById('navOverlay');
+const navLinks = document.querySelectorAll('.nav-links a');
 
-  hamburger.addEventListener('click', () => {
-    navOverlay.classList.toggle('open');
-  });
+hamburger.addEventListener('click', () => {
+  navOverlay.classList.toggle('open');
+});
 
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      navOverlay.classList.remove('open');
-    });
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    navOverlay.classList.remove('open');
   });
+});
 </script>
   
 </body>

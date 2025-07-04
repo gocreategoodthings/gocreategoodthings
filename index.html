@@ -1,64 +1,74 @@
-<!-- BASELINE HTML - Go Create Good Things v2.0 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Go Create Good Things</title>
+  <meta name="description" content="A custom portfolio site by a designer who builds brands with purpose. Let's Go Create Good Things together." />
+  <meta property="og:title" content="Go Create Good Things" />
+  <meta property="og:description" content="A branding, logo design, and video portfolio built for impact." />
+  <meta property="og:image" content="gcgt-favicon-colored-transparent.png" />
+  <meta property="og:type" content="website" />
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.png" />
 </head>
 <body>
-
   <header class="site-header">
     <div class="header-inner">
-      <div class="brand-name">Go Create Good Things</div>
+      <h1 class="brand-name">Go Create Good Things</h1>
+      <button class="hamburger-icon" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
-  <button id="hamburger" class="hamburger-icon" onclick="toggleNav()">
-    <span></span><span></span><span></span>
-  </button>
-
   <div class="nav-overlay" id="navOverlay">
-    <button id="hamburger-close" class="hamburger-icon" onclick="toggleNav()">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="bubble-container"></div>
     <nav class="nav-links">
       <ul>
-        <li><a href="#work">Work</a></li>
+        <li><a href="#selected-work">Work</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <div class="socials">
+        <a href="https://instagram.com/gocreategoodthings" target="_blank">Instagram</a>
+        <a href="mailto:gocreategoodthings@gmail.com">Email</a>
+      </div>
     </nav>
-    <div class="social-links">
-      <a href="#">IG</a>
-      <a href="#">Dribbble</a>
-      <a href="#">LinkedIn</a>
-    </div>
-    <div class="bubble-container" id="bubbles"></div>
   </div>
 
-  <section class="hero">
-    <img src="your-logo.png" alt="GCGT Logo" class="hero-logo" />
-    <p class="hero-tagline">Design with purpose. Impact with creativity.</p>
-  </section>
-
   <main>
-    <section id="work">
+    <section class="hero parallax">
+      <img src="GCGT_Logo-07.png" alt="Go Create Good Things Logo" class="hero-logo" />
+      <h2 class="hero-tagline">Design with purpose. Impact with creativity.</h2>
+    </section>
+
+    <section class="projects" id="selected-work">
       <h2>Selected Work</h2>
       <div class="project-grid">
-        <a class="project-card" href="#">
-          <h4>Adventure Co Branding</h4>
-          <p>Crafted an outdoor lifestyle brand rooted in grit and glory.</p>
+        <a href="projects/project-1.html" class="project-card">
+          <img src="images/project1.jpg" alt="Project 1 Thumbnail">
+          <div class="project-text">
+            <h4>Adventure Co Branding</h4>
+            <p>Crafted an outdoor lifestyle brand rooted in grit and glory.</p>
+          </div>
         </a>
-        <a class="project-card" href="#">
-          <h4>Sunrise Shack Rebrand</h4>
-          <p>Vibrant design for Hawaii's happiest coffee bar.</p>
+        <a href="projects/project-2.html" class="project-card">
+          <img src="images/project2.jpg" alt="Project 2 Thumbnail">
+          <div class="project-text">
+            <h4>Sunrise Shack Rebrand</h4>
+            <p>Vibrant design for Hawaii’s happiest coffee bar.</p>
+          </div>
         </a>
-        <a class="project-card" href="#">
-          <h4>Seager Co Film Series</h4>
-          <p>Rugged storytelling meets clean cinematic polish.</p>
+        <a href="projects/project-3.html" class="project-card">
+          <img src="images/project3.jpg" alt="Project 3 Thumbnail">
+          <div class="project-text">
+            <h4>Seager Co Film Series</h4>
+            <p>Rugged storytelling meets clean cinematic polish.</p>
+          </div>
         </a>
       </div>
     </section>
@@ -71,7 +81,7 @@
     <section class="contact" id="contact">
       <h2>Let’s Talk</h2>
       <p>Got a brand, a project, or an idea worth pursuing? I’d love to hear from you.</p>
-      <a href="mailto:gocreategoodthings@gmail.com">→ gocreategoodthings@gmail.com</a>
+      <p><a href="mailto:gocreategoodthings@gmail.com">→ gocreategoodthings@gmail.com</a></p>
     </section>
   </main>
 
@@ -80,23 +90,58 @@
   </footer>
 
   <script>
-    function toggleNav() {
-      const overlay = document.getElementById('navOverlay');
-      const bubbles = document.getElementById('bubbles');
-      overlay.classList.toggle('open');
-      document.body.style.overflow = overlay.classList.contains('open') ? 'hidden' : '';
-      bubbles.classList.toggle('show');
+    const hamburger = document.getElementById('hamburger');
+    const navOverlay = document.getElementById('navOverlay');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const bubbleContainer = document.querySelector('.bubble-container');
 
-      if (bubbles.classList.contains('show') && !bubbles.children.length) {
-        for (let i = 0; i < 20; i++) {
-          const b = document.createElement('div');
-          b.classList.add('bubble');
-          b.style.left = Math.random() * 100 + 'vw';
-          b.style.animationDelay = Math.random() * 5 + 's';
-          bubbles.appendChild(b);
-        }
+    function createBubbles() {
+      bubbleContainer.innerHTML = '';
+      for (let i = 0; i < 30; i++) {
+        const bubble = document.createElement('div');
+        bubble.classList.add('bubble');
+        const size = Math.random() * 20 + 5;
+        const left = Math.random() * 100;
+        bubble.style.width = `${size}px`;
+        bubble.style.height = `${size}px`;
+        bubble.style.left = `${left}%`;
+        bubble.style.animationDuration = `${4 + Math.random() * 4}s`;
+        bubble.style.animationDelay = `${Math.random() * 2}s`;
+        bubbleContainer.appendChild(bubble);
       }
     }
+
+    function triggerBubbles() {
+      createBubbles();
+      bubbleContainer.classList.remove('show');
+      void bubbleContainer.offsetWidth;
+      bubbleContainer.classList.add('show');
+    }
+
+    function toggleNav() {
+      navOverlay.classList.toggle('open');
+      hamburger.classList.toggle('open');
+      document.body.style.overflow = navOverlay.classList.contains('open') ? 'hidden' : '';
+      if (navOverlay.classList.contains('open')) {
+        setTimeout(triggerBubbles, 800);
+      }
+    }
+
+    hamburger.addEventListener('click', toggleNav);
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navOverlay.classList.remove('open');
+        hamburger.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Optional: Parallax scroll effect
+    window.addEventListener('scroll', () => {
+      const hero = document.querySelector('.parallax');
+      let offset = window.scrollY;
+      hero.style.backgroundPositionY = offset * 0.5 + 'px';
+    });
   </script>
 </body>
 </html>

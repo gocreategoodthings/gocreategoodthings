@@ -385,3 +385,10 @@ footer {
     transform: scale(1) translateY(0);
   }
 }
+
+@keyframes fadeRise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

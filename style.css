@@ -62,13 +62,9 @@ h1, h2, h3, h4 {
 
 /* === HERO SECTION === */
 .hero {
-  width: 100vw;
-  height: 100vh;
-  background-color: #0a0a0a; /* pitch black */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  padding: 7rem 1rem 9rem;
+  text-align: center;
+  background: #fefefe;
 }
 
 .hero-inner {

@@ -108,9 +108,11 @@ nav a {
 }
 
 .hero-logo {
-  max-width: 280px;
-  margin-bottom: 1.5rem;
+  max-width: 320px;
+  margin-bottom: 2rem;
   animation: pop 0.8s ease;
+  width: 100%;
+  height: auto;
 }
 
 @keyframes pop {
@@ -218,7 +220,7 @@ footer {
 
 @media (min-width: 768px) {
   .hero-logo {
-    max-width: 340px;
+    max-width: 360px;
   }
 }
 

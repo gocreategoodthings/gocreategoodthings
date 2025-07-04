@@ -127,6 +127,7 @@
 
   hamburger.addEventListener('click', () => {
     navOverlay.classList.toggle('open');
+    hamburger.classList.toggle('open');
     document.body.classList.toggle('no-scroll');
 
     if (navOverlay.classList.contains('open')) {

@@ -92,49 +92,55 @@
     <p>© 2025 Go Create Good Things</p>
   </footer>
 
-  <script>
+ <script>
   const hamburger = document.getElementById('hamburger');
   const navOverlay = document.getElementById('navOverlay');
   const navLinks = document.querySelectorAll('.nav-links a');
   const bubbleContainer = document.querySelector('.bubble-container');
+
   function createBubbles() {
-  bubbleContainer.innerHTML = ''; // clear old ones
+    bubbleContainer.innerHTML = '';
 
-  for (let i = 0; i < 30; i++) {
-    const bubble = document.createElement('div');
-    bubble.classList.add('bubble');
+    for (let i = 0; i < 30; i++) {
+      const bubble = document.createElement('div');
+      bubble.classList.add('bubble');
 
-    const size = Math.random() * 20 + 5;
-    const left = Math.random() * 100;
+      const size = Math.random() * 20 + 5;
+      const left = Math.random() * 100;
 
-    bubble.style.width = `${size}px`;
-    bubble.style.height = `${size}px`;
-    bubble.style.left = `${left}%`;
-    bubble.style.animationDuration = `${4 + Math.random() * 4}s`;
-    bubble.style.animationDelay = `${Math.random() * 2}s`;
+      bubble.style.width = `${size}px`;
+      bubble.style.height = `${size}px`;
+      bubble.style.left = `${left}%`;
+      bubble.style.animationDuration = `${4 + Math.random() * 4}s`;
+      bubble.style.animationDelay = `${Math.random() * 2}s`;
 
-    bubbleContainer.appendChild(bubble);
+      bubbleContainer.appendChild(bubble);
+    }
   }
-}
 
-function triggerBubbles() {
-  createBubbles();
-  bubbleContainer.classList.remove('show');
-  void bubbleContainer.offsetWidth;
-  bubbleContainer.classList.add('show');
-}
+  function triggerBubbles() {
+    createBubbles();
+    bubbleContainer.classList.remove('show');
+    void bubbleContainer.offsetWidth;
+    bubbleContainer.classList.add('show');
+  }
 
   hamburger.addEventListener('click', () => {
     navOverlay.classList.toggle('open');
+    document.body.classList.toggle('no-scroll');
 
     if (navOverlay.classList.contains('open')) {
-      setTimeout(triggerBubbles, 900); // matches your overlay transition
+      setTimeout(triggerBubbles, 900);
+    } else {
+      bubbleContainer.classList.remove('show');
     }
   });
 
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
       navOverlay.classList.remove('open');
+      document.body.classList.remove('no-scroll');
+      bubbleContainer.classList.remove('show');
     });
   });
 </script>

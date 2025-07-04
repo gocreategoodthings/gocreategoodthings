@@ -141,21 +141,44 @@ h2 {
 }
 
 /* === ABOUT & CONTACT SECTIONS === */
-section.about,
-section.contact {
-  padding: 5rem 1rem;
+section.about {
+  padding: 7rem 1rem;
   text-align: center;
+  background: #fff;
 }
 
 .about {
   background: #fff;
 }
 
+.about p {
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+  font-size: 1.1rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeRise 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.about-photo {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 2rem;
+  display: block;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeRise 1s ease-out forwards;
+  animation-delay: 0.1s;
+}
+
 .contact {
   background: #f4f4f4;
 }
 
-.about p,
 .contact p {
   max-width: 700px;
   margin: 0 auto 1.5rem;

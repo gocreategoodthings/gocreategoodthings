@@ -360,25 +360,32 @@ section.about {
 .site-footer {
   text-align: center;
   background: #f4f4f4;
-  padding: 3rem 1rem 2rem;
+  padding: 5rem 1rem 3rem;
   font-size: 0.9rem;
   color: #222;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  animation: fadeRise 1s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+  animation-delay: 0.4s;
 }
 
 .site-footer p {
   margin-bottom: 1rem;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .social-links {
   font-weight: 500;
+  font-size: 0.95rem;
 }
 
 .social-links a {
   color: #247DA0;
   text-decoration: none;
   transition: color 0.3s ease;
+  margin: 0 0.25rem;
 }
 
 .social-links a:hover {
@@ -390,6 +397,16 @@ section.about {
   color: #ccc;
   font-weight: 300;
   pointer-events: none;
+}
+
+.social-links .arrow {
+  margin-left: 0.35rem;
+  font-weight: 400;
+  transition: margin-left 0.3s ease;
+}
+
+.social-links a:hover .arrow {
+  margin-left: 0.5rem;
 }
 
 /* === MOBILE === */

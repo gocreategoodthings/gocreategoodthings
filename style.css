@@ -516,7 +516,7 @@ section.about {
 .hero {
   background: #0a0a0a;
   width: 100vw;
-  min-height: 92vh;
+  height: 100vh;
   margin-left: calc(-1 * (100vw - 100%) / 2);
   display: flex;
   justify-content: center;

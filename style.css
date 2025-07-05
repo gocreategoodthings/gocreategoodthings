@@ -19,6 +19,15 @@ body {
   padding: 0 1.5rem;
 }
 
+:root {
+  --space-xs: 0.75rem;
+  --space-sm: 1.25rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+  --space-2xl: 8rem;
+}
+
 h1, h2, h3, h4 {
   font-family: 'Space Grotesk', 'Inter', sans-serif;
   font-weight: 600;
@@ -88,7 +97,7 @@ main {
 }
 
 section {
-  margin: 6rem 0;
+  margin: var(--space-xl) 0;
   scroll-margin-top: 100px;
 }
 
@@ -160,7 +169,7 @@ h2 {
 .about {
   background: #fff;
   color: #111;
-  padding: 5rem 2rem;
+  padding: var(--space-xl) 2rem;
 }
 
 .about-content {
@@ -242,7 +251,7 @@ h2 {
 }
 
 .contact {
-  padding: 8rem 1rem 6rem;
+  padding: var(--space-2xl) 1rem var(--space-xl);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -534,7 +543,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem 1.5rem 4rem;
+  padding: var(--space-md) 1.5rem var(--space-lg);
   text-align: center;
 }
 

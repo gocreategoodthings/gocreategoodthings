@@ -368,14 +368,12 @@ section.about {
 /* === FOOTER === */
 .site-footer {
   position: relative;
+  width: 100vw;
+  margin-left: calc(-1 * (100vw - 100%) / 2);
   text-align: center;
-  background: #000; /* fallback color */
-  background-image: url('footer-bg.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  background: #000; /* solid black */
   color: #fff;
-  padding: 6rem 1rem 4rem;
+  padding: 6rem 1.5rem 4rem;
   font-size: 0.9rem;
   animation: fadeRise 1s ease-out forwards;
   opacity: 0;

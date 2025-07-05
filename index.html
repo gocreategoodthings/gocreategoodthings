@@ -167,9 +167,22 @@
         document.body.style.overflow = '';
       });
     });
-  </script>
+  <script>
+  let lastScrollTop = 0;
+  window.addEventListener("scroll", function () {
+    const st = window.pageYOffset || document.documentElement.scrollTop;
+    if (Math.abs(st - lastScrollTop) > 5) {
+      document.body.classList.add("scrolling");
+      clearTimeout(window.removeScrollClass);
+      window.removeScrollClass = setTimeout(() => {
+        document.body.classList.remove("scrolling");
+      }, 150);
+    }
+    lastScrollTop = st <= 0 ? 0 : st;
+  }, false);
+</script>
 
-  <footer class="site-footer">
+<footer class="site-footer">
   <p>Handcrafted with purpose in OKC.<br>&copy; 2025 Go Create Good Things.</p>
   <div class="social-links">
     <a href="https://instagram.com/gocreategoodthings" target="_blank">
@@ -181,7 +194,6 @@
     </a>
   </div>
 </footer>
-
 <script>
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -197,7 +209,6 @@
   document.querySelectorAll('.scroll-fade').forEach(el => {
     observer.observe(el);
   });
-</script>
-  
+</script>  
 </body>
 </html>

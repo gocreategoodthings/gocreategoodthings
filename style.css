@@ -680,6 +680,11 @@ a:hover::after {
     transition: background-position 0.2s ease-out;
   }
 
+/* === PARALLAX HERO LOGO === */
+.hero-logo.parallax-shift {
+  transform: translateY(var(--scrollY, 0px)) scale(0.95);
+}
+
   .scrolling .project-thumb {
     background-position: center 40%;
   }

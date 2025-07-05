@@ -140,6 +140,14 @@ section {
   scroll-margin-top: 100px;
 }
 
+/* === PROJECTS SECTION === */
+.projects {
+  background: linear-gradient(180deg, #0a0a0a 0%, #11252B 100%);
+  padding: var(--space-2xl) 1rem var(--space-xl);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
 /* === PROJECTS GRID === */
 .project-grid {
   display: grid;
@@ -286,26 +294,20 @@ section {
   border-radius: 999px;
   font-weight: 600;
   font-size: 1rem;
-  transition: background 0.3s ease;
   opacity: 0;
   transform: translateY(30px);
   animation: fadeRise 1s ease-out forwards;
   animation-delay: 0.5s;
+
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
 }
 
 .contact-button:hover {
   background-color: var(--color-accent);
   color: #111;
-}
-
-.contact-button {
-  transition: all 0.25s ease-in-out;
-  box-shadow: 0 0 0 rgba(0,0,0,0);
-}
-
-.contact-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .project-card:hover .project-thumb {

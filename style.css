@@ -45,7 +45,7 @@ h1, h2, h3, h4 {
 .header-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding-inline: 1.5rem;
+  padding: 0 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -66,30 +66,21 @@ h1, h2, h3, h4 {
 }
 
 /* === HERO SECTION === */
-.hero {
-  padding: 7rem 1rem 9rem;
-  text-align: center;
-  background: #fefefe;
-}
-
-.hero-inner {
-  width: 100%;
-  max-width: 1200px;
-  padding: 0 2rem;
-  text-align: center;
-}
-
 .hero-logo {
-  max-width: 400px;
+  max-width: 480px;
   width: 100%;
   height: auto;
+  opacity: 0;
+  transform: scale(0.95) translateY(30px);
+  animation: popFadeRise 1.2s ease-out forwards, float 12s ease-in-out infinite;
+  animation-delay: 0.3s, 1.6s; /* load anim first, then start floating */
 }
 
 /* === MAIN CONTENT === */
 main {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
 }
 
 section {
@@ -130,6 +121,18 @@ h2 {
   text-decoration: none;
   color: #111;
   transition: all 0.2s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeRise 1s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.project-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.project-card:nth-child(3) {
+  animation-delay: 0.6s;
 }
 
 .project-card:hover {
@@ -433,13 +436,19 @@ section.about {
   transform: translateX(2px);
 }
 
+/* === DESKTOP === */
+@media (min-width: 1024px) {
+  .hero-logo {
+    max-width: 540px;
+  }
+}
+
 /* === MOBILE === */
 @media (max-width: 600px) {
   .hero-logo {
     max-width: 280px;
   }
 
-@media (max-width: 600px) {
   .header-inner {
     flex-direction: row;
     justify-content: space-between;
@@ -449,18 +458,6 @@ section.about {
     position: absolute;
     top: 0;
     right: 0;
-  }
-}
-
-  .project-grid {
-    gap: 1rem;
-  }
-
-  .project-card {
-    padding: 1.5rem;
-  }
-
-  .hamburger-icon {
     top: 1rem;
     right: 1rem;
     width: 26px;
@@ -471,8 +468,12 @@ section.about {
     height: 2px;
   }
 
-  .hero {
-    padding-top: 4rem;
+  .project-grid {
+    gap: 1rem;
+  }
+
+  .project-card {
+    padding: 1.5rem;
   }
 
   h2 {
@@ -498,12 +499,28 @@ section.about {
   }
 }
 
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-8px) translateX(2px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
 /* === FIXED: HERO SECTION FULL-WIDTH BLACK === */
 .hero {
   background: #0a0a0a;
   width: 100vw;
+  min-height: 100vh;
   margin-left: calc(-1 * (100vw - 100%) / 2);
-  padding: 7rem 0 9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 1.5rem;
   text-align: center;
 }
 
@@ -511,6 +528,6 @@ section.about {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 3rem;
   text-align: center;
 }

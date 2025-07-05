@@ -457,6 +457,10 @@ section {
 /* === FOOTER === */
 .site-footer {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100vw;
   margin-left: calc(-1 * (100vw - 100%) / 2);
   text-align: center;

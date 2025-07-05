@@ -1,3 +1,4 @@
+
 /* === BASE RESET === */
 * {
   margin: 0;
@@ -118,7 +119,8 @@ section h2 {
   height: auto;
   opacity: 0;
   transform: scale(0.95) translateY(30px);
-  animation: float 12s ease-in-out infinite;
+  animation: popFadeRise 1.2s ease-out forwards, float 12s ease-in-out infinite;
+  animation-delay: 0.3s, 1.6s; /* load anim first, then start floating */
 }
 
 /* === MAIN CONTENT === */
@@ -457,10 +459,6 @@ section {
 /* === FOOTER === */
 .site-footer {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   width: 100vw;
   margin-left: calc(-1 * (100vw - 100%) / 2);
   text-align: center;

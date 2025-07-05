@@ -603,6 +603,12 @@ a:hover::after {
   }
 }
 
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeRise 1s ease-out forwards;
+}
+
 @keyframes float {
   0% {
     transform: translateY(0) translateX(0);

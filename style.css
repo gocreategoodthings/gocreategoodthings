@@ -64,6 +64,7 @@ h4 {
 
 section h2 {
   text-align: center;
+  margin-bottom: var(--space-md);
 }
 
 :target::before {

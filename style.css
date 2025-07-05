@@ -33,7 +33,7 @@ h1, h2, h3, h4 {
 
 /* === HEADER === */
 .site-header {
-  padding-block: 2.5rem;
+  padding: 2.5rem 0 1rem;
   border-bottom: 1px solid #eee;
   position: relative;
   z-index: 10;
@@ -456,12 +456,9 @@ section.about {
     padding: 0 1.5rem;
     justify-content: space-between;
   }
-}
 
   .hamburger-icon {
     position: absolute;
-    top: 0;
-    right: 0;
     top: 1rem;
     right: 1rem;
     width: 26px;

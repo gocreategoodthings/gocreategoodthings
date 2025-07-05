@@ -167,6 +167,8 @@ section.about {
 
 .about {
   background: #fff;
+  color: #111;
+  padding: 4rem 1.5rem;
 }
 
 .about p {

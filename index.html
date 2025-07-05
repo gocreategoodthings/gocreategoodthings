@@ -114,60 +114,63 @@
 </section>
   </main>
 
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const hamburgerClose = document.getElementById('hamburger-close');
-    const navOverlay = document.getElementById('navOverlay');
-    const navLinks = document.querySelectorAll('.nav-links a');
-    const bubbleContainer = document.querySelector('.bubble-container');
+ <script>
+  const hamburger = document.getElementById('hamburger');
+  const hamburgerClose = document.getElementById('hamburger-close');
+  const navOverlay = document.getElementById('navOverlay');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const bubbleContainer = document.querySelector('.bubble-container');
 
-    function createBubbles() {
-      bubbleContainer.innerHTML = '';
-      for (let i = 0; i < 30; i++) {
-        const bubble = document.createElement('div');
-        bubble.classList.add('bubble');
-        const size = Math.random() * 20 + 5;
-        const left = Math.random() * 100;
-        bubble.style.width = `${size}px`;
-        bubble.style.height = `${size}px`;
-        bubble.style.left = `${left}%`;
-        bubble.style.animationDuration = `${4 + Math.random() * 4}s`;
-        bubble.style.animationDelay = `${Math.random() * 2}s`;
-        bubbleContainer.appendChild(bubble);
-      }
+  function createBubbles() {
+    bubbleContainer.innerHTML = '';
+    for (let i = 0; i < 30; i++) {
+      const bubble = document.createElement('div');
+      bubble.classList.add('bubble');
+      const size = Math.random() * 20 + 5;
+      const left = Math.random() * 100;
+      bubble.style.width = `${size}px`;
+      bubble.style.height = `${size}px`;
+      bubble.style.left = `${left}%`;
+      bubble.style.animationDuration = `${4 + Math.random() * 4}s`;
+      bubble.style.animationDelay = `${Math.random() * 2}s`;
+      bubbleContainer.appendChild(bubble);
     }
+  }
 
-    function triggerBubbles() {
-      createBubbles();
-      bubbleContainer.classList.remove('show');
-      void bubbleContainer.offsetWidth;
-      bubbleContainer.classList.add('show');
+  function triggerBubbles() {
+    createBubbles();
+    bubbleContainer.classList.remove('show');
+    void bubbleContainer.offsetWidth;
+    bubbleContainer.classList.add('show');
+  }
+
+  function toggleNav() {
+    navOverlay.classList.toggle('open');
+    hamburger.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', navOverlay.classList.contains('open'));
+    navOverlay.setAttribute('aria-hidden', !navOverlay.classList.contains('open'));
+    document.body.style.overflow = navOverlay.classList.contains('open') ? 'hidden' : '';
+    if (navOverlay.classList.contains('open')) {
+      setTimeout(triggerBubbles, 900);
     }
+  }
 
-    function toggleNav() {
-      navOverlay.classList.toggle('open');
-      hamburger.classList.toggle('open');
-      hamburger.setAttribute('aria-expanded', navOverlay.classList.contains('open'));
-      navOverlay.setAttribute('aria-hidden', !navOverlay.classList.contains('open'));
-      document.body.style.overflow = navOverlay.classList.contains('open') ? 'hidden' : '';
-      if (navOverlay.classList.contains('open')) {
-        setTimeout(triggerBubbles, 900);
-      }
-    }
+  hamburger.addEventListener('click', toggleNav);
+  hamburgerClose.addEventListener('click', toggleNav);
 
-    hamburger.addEventListener('click', toggleNav);
-    hamburgerClose.addEventListener('click', toggleNav);
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navOverlay.classList.remove('open');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-        navOverlay.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-      });
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navOverlay.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      navOverlay.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
     });
-  <script>
+  });
+</script>
+
+<script>
+  // Scroll detection for "scrolling" class + parallax hero shift
   let lastScrollTop = 0;
   window.addEventListener("scroll", function () {
     const st = window.pageYOffset || document.documentElement.scrollTop;
@@ -179,22 +182,15 @@
       }, 150);
     }
     lastScrollTop = st <= 0 ? 0 : st;
-  }, false);
-</script>
 
-<footer class="site-footer">
-  <p>Handcrafted with purpose in OKC.<br>&copy; 2025 Go Create Good Things.</p>
-  <div class="social-links">
-    <a href="https://instagram.com/gocreategoodthings" target="_blank">
-      Instagram<span class="arrow">→</span>
-    </a>
-    <span class="divider">|</span>
-    <a href="https://www.linkedin.com/in/bradyhudson/" target="_blank">
-      LinkedIn<span class="arrow">→</span>
-    </a>
-  </div>
-</footer>
-<script>
+    const heroLogo = document.querySelector('.hero-logo');
+    if (heroLogo) {
+      heroLogo.style.setProperty('--scrollY', `${st * 0.15}px`);
+      heroLogo.classList.add('parallax-shift');
+    }
+  }, false);
+
+  // Scroll fade-in animation
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -209,6 +205,19 @@
   document.querySelectorAll('.scroll-fade').forEach(el => {
     observer.observe(el);
   });
-</script>  
+</script>
+
+<footer class="site-footer">
+  <p>Handcrafted with purpose in OKC.<br>&copy; 2025 Go Create Good Things.</p>
+  <div class="social-links">
+    <a href="https://instagram.com/gocreategoodthings" target="_blank">
+      Instagram<span class="arrow">→</span>
+    </a>
+    <span class="divider">|</span>
+    <a href="https://www.linkedin.com/in/bradyhudson/" target="_blank">
+      LinkedIn<span class="arrow">→</span>
+    </a>
+  </div>
+</footer>
 </body>
 </html>

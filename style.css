@@ -481,3 +481,41 @@ section.about {
     transform: translateY(0);
   }
 }
+
+/* === FIXED: HERO SECTION FULL-WIDTH BLACK === */
+.hero {
+  background: #0a0a0a;
+  width: 100vw;
+  margin-left: calc(-1 * (100vw - 100%) / 2);
+  padding: 7rem 0 9rem;
+  text-align: center;
+}
+
+.hero-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+/* === FIXED: FOOTER STYLING === */
+.site-footer {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-1 * (100vw - 100%) / 2);
+  text-align: center;
+  background: #000; /* fallback color */
+  background-image: url('footer-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+  padding: 6rem 1.5rem 4rem;
+  font-size: 0.9rem;
+  animation: fadeRise 1s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+  animation-delay: 0.4s;
+  overflow: hidden;
+}

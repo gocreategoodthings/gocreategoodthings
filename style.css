@@ -33,19 +33,14 @@ h1, h2, h3, h4 {
 
 /* === HEADER === */
 .site-header {
-  padding: 2rem 0 1rem;
-  position: absolute;
-  width: 100%;
-  z-index: 10;
-  background: transparent;
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  animation: fadeRise 0.9s ease-out forwards;
-  opacity: 0;
-  transform: translateY(-20px);
+  width: 100%;
+  background: transparent;
   border-bottom: none;
+  padding: 2.5rem 0 1rem;
+  z-index: 10;
 }
 
 .header-inner {
@@ -525,7 +520,6 @@ section.about {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 6rem 1.5rem 4rem;
   text-align: center;
 }
 

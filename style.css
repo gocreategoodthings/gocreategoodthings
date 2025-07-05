@@ -53,7 +53,7 @@ h1, h2, h3, h4 {
   padding: 1.25rem 3rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; /* ← THIS is the key */
 }
 
 .brand-name {

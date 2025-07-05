@@ -34,15 +34,14 @@ h1, h2, h3, h4 {
 /* === HEADER === */
 .site-header {
   padding: 2.5rem 0 1rem;
-  border-bottom: 1px solid #eee;
+  border-bottom: none;
   position: relative;
   z-index: 10;
   animation: fadeRise 0.9s ease-out forwards;
   opacity: 0;
   transform: translateY(-20px);
-  background: #fff;
-  margin-bottom: 0;
-
+  background: transparent;
+  color: #fff;
 }
 
 .header-inner {
@@ -61,11 +60,12 @@ h1, h2, h3, h4 {
   font-weight: 700;
   transition: color 0.3s ease, text-shadow 0.3s ease;
   cursor: default;
+  color: #fff; /* force white on dark hero */
 }
 
 .brand-name:hover {
-  color: #247DA0;
-  text-shadow: 0 0 6px rgba(36, 125, 160, 0.25);
+  color: #66BCC0; /* soft teal hover on black background */
+  text-shadow: 0 0 6px rgba(102, 188, 192, 0.25);
 }
 
 /* === HERO SECTION === */
@@ -310,7 +310,7 @@ section.about {
   background: none;
   border: none;
   padding: 0;
-  color: #111;
+  color: #fff; /* make icon white */
 }
 
 .nav-overlay .hamburger-icon {

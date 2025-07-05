@@ -670,3 +670,17 @@ a:hover::after {
     transform: translateY(8px);
   }
 }
+
+@media (pointer: fine) {
+  .project-thumb {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    will-change: background-position;
+    transition: background-position 0.2s ease-out;
+  }
+
+  .scrolling .project-thumb {
+    background-position: center 40%;
+  }
+}

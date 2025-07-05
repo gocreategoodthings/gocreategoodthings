@@ -512,6 +512,10 @@ a::after {
   transition: width 0.3s ease;
 }
 
+.contact-button::after {
+  content: none;
+}
+
 a:hover::after {
   width: 100%;
 }

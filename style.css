@@ -40,6 +40,9 @@ h1, h2, h3, h4 {
   animation: fadeRise 0.9s ease-out forwards;
   opacity: 0;
   transform: translateY(-20px);
+  background: #fff;
+  margin-bottom: 0;
+
 }
 
 .header-inner {
@@ -439,7 +442,7 @@ section.about {
 /* === DESKTOP === */
 @media (min-width: 1024px) {
   .hero-logo {
-    max-width: 540px;
+    max-width: 420px;
   }
 }
 
@@ -450,9 +453,10 @@ section.about {
   }
 
   .header-inner {
-    flex-direction: row;
+    padding: 0 1.5rem;
     justify-content: space-between;
   }
+}
 
   .hamburger-icon {
     position: absolute;

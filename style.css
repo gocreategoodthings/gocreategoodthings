@@ -696,3 +696,8 @@ a:hover::after {
     background-position: center 40%;
   }
 }
+
+.logo-parallax-wrapper {
+  will-change: transform;
+  transition: transform 0.2s ease-out;
+}

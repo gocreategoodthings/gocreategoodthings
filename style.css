@@ -518,12 +518,12 @@ h2 {
 .hero {
   background: #0a0a0a;
   width: 100vw;
-  min-height: 92vh;
+  min-height: 100vh;
   margin-left: calc(-1 * (100vw - 100%) / 2);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 4rem 1.5rem 3rem;
+  padding: 6rem 1.5rem 5rem;
   text-align: center;
   position: relative;
 }

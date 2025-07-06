@@ -528,6 +528,15 @@ h2 {
   }
 }
 
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow: 0 0 4px rgba(247, 186, 35, 0.4);
+  }
+  50% {
+    text-shadow: 0 0 12px rgba(247, 186, 35, 0.8);
+  }
+}
+
 /* === FIXED: HERO SECTION FULL-WIDTH BLACK === */
 .hero {
   background: #0a0a0a;
@@ -563,8 +572,9 @@ h2 {
 .scroll-indicator .arrow {
   display: inline-block;
   font-size: 2rem;
-  color: #fff;
-  animation: bounce 1.5s infinite;
+  color: #F7BA23;
+  animation: bounce 1.5s infinite, glowPulse 2.5s ease-in-out infinite;
+  text-shadow: 0 0 4px rgba(247, 186, 35, 0.4);
 }
 
 @keyframes bounce {

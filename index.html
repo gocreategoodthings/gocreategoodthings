@@ -152,6 +152,22 @@
     });
   </script>
 
+  <script>
+  const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      scrollTopBtn.classList.add('show');
+    } else {
+      scrollTopBtn.classList.remove('show');
+    }
+  });
+
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
   <footer class="site-footer">
   <p>Handcrafted with purpose in OKC.<br>&copy; 2025 Go Create Good Things.</p>
   <div class="social-links">
@@ -180,6 +196,7 @@
   document.querySelectorAll('.fade-up').forEach(el => {
     observer.observe(el);
   });
-</script>  
+</script>
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">☀️</button>
 </body>
 </html>

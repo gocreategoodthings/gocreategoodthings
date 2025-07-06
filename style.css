@@ -593,6 +593,12 @@ h2 {
   border-bottom: 1px solid #e6e1d8;
 }
 
+/* === BRAND COLOR HIGHLIGHTS === */
+.gold {
+  color: #F7BA23;
+  font-weight: 600;
+}
+
 .fade-up {
   opacity: 0;
   transform: translateY(30px);

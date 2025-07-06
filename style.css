@@ -592,3 +592,14 @@ h2 {
   border-top: 1px solid #e6e1d8;
   border-bottom: 1px solid #e6e1d8;
 }
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}

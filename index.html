@@ -33,15 +33,6 @@
   </header>
 
   <div class="nav-overlay" id="navOverlay" aria-hidden="true">
-    <button 
-      class="hamburger-icon" 
-      id="hamburger-close" 
-      aria-label="Close Navigation Menu"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
 
     <div class="bubble-container"></div>
 
@@ -110,7 +101,6 @@
 
   <script>
     const hamburger = document.getElementById('hamburger');
-    const hamburgerClose = document.getElementById('hamburger-close');
     const navOverlay = document.getElementById('navOverlay');
     const navLinks = document.querySelectorAll('.nav-links a');
     const bubbleContainer = document.querySelector('.bubble-container');
@@ -150,7 +140,6 @@
     }
 
     hamburger.addEventListener('click', toggleNav);
-    hamburgerClose.addEventListener('click', toggleNav);
 
     navLinks.forEach(link => {
       link.addEventListener('click', () => {

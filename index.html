@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -57,32 +58,30 @@
 <main>
   <section class="hero">
     <div class="hero-inner">
-  <div class="logo-parallax-wrapper">
-    <img src="GCGT_Logo.png" alt="Go Create Good Things Logo" class="hero-logo scroll-fade" />
-  </div>
-  <div class="scroll-indicator scroll-fade">
-    <span class="arrow">&#8595;</span>
-  </div>
-</div>
+      <img src="GCGT_Logo.png" alt="Go Create Good Things Logo" class="hero-logo" />
+      <div class="scroll-indicator">
+        <span class="arrow">&#8595;</span>
+      </div>
+    </div>
   </section>
 </main>
 
     <section class="projects" id="selected-work">
-  <h2 class="scroll-fade">Selected Work</h2>
+      <h2>Selected Work</h2>
       <div class="project-grid">
-        <a href="projects/project-1.html" class="project-card scroll-fade" style="animation-delay: 0.2s">
+        <a href="projects/project-1.html" class="project-card">
   <div class="project-thumb"></div>
   <h4>Project Title 1</h4>
   <p>Short description of the project.</p>
 </a>
 
-<a href="projects/project-2.html" class="project-card scroll-fade" style="animation-delay: 0.4s">
+<a href="projects/project-2.html" class="project-card">
   <div class="project-thumb"></div>
   <h4>Project Title 2</h4>
   <p>Another quick blurb about what you did.</p>
 </a>
 
-<a href="projects/project-3.html" class="project-card scroll-fade" style="animation-delay: 0.6s">
+<a href="projects/project-3.html" class="project-card">
   <div class="project-thumb"></div>
   <h4>Project Title 3</h4>
   <p>Something fun, punchy, and scroll-stopping.</p>
@@ -91,132 +90,81 @@
     </section>
 
     <section class="about" id="about">
-  <div class="about-content">
-    <div class="about-image">
-      <img src="brud-about.jpg" alt="Photo of Brud" />
-    </div>
-    <div class="about-text">
-      <h2>About</h2>
-      <p class="scroll-fade">
-        Great design should move people, not just look good. That’s what I’m chasing.
-        Born in Texas, designing in Oklahoma, and driven by faith, I believe creative work
-        has the power to shift perspectives and make a lasting impact on how we see and engage
-        with the world. Let’s Go Create Good Things together.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <div class="contact-wave-top scroll-fade"></div>
-  <h2 class="scroll-fade">Let’s Talk</h2>
-  <p class="scroll-fade">
-    Have a project, a brand, or something meaningful you’re building?<br>
-    Let’s make it resonate.
+  <h2>About</h2>
+  <img src="brud-about.jpg" alt="Photo of Brud" class="about-photo" />
+  <p>
+    Great design should move people, not just look good. That’s what I’m chasing.
+    Born in Texas, building in Oklahoma, and driven by faith, I believe creative work
+    has the power to shift perspectives and make a lasting impact on how we see and engage
+    with the world. Let’s Go Create Good Things together.
   </p>
-  <a href="mailto:gocreategoodthings@gmail.com" class="contact-button scroll-fade">Start the Conversation</a>
 </section>
 
+    <section class="contact" id="contact">
+  <div class="contact-wave-top"></div>
+  <h2>Let’s Talk</h2>
+  <p>Have a project, a brand, or something meaningful you’re building?<br>  
+     Let’s make it resonate.</p>
+  <a href="mailto:gocreategoodthings@gmail.com" class="contact-button">Start the Conversation</a>
+</section>
   </main>
 
- <script>
-  const hamburger = document.getElementById('hamburger');
-  const hamburgerClose = document.getElementById('hamburger-close');
-  const navOverlay = document.getElementById('navOverlay');
-  const navLinks = document.querySelectorAll('.nav-links a');
-  const bubbleContainer = document.querySelector('.bubble-container');
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const hamburgerClose = document.getElementById('hamburger-close');
+    const navOverlay = document.getElementById('navOverlay');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const bubbleContainer = document.querySelector('.bubble-container');
 
-  function createBubbles() {
-    bubbleContainer.innerHTML = '';
-    for (let i = 0; i < 30; i++) {
-      const bubble = document.createElement('div');
-      bubble.classList.add('bubble');
-      const size = Math.random() * 20 + 5;
-      const left = Math.random() * 100;
-      bubble.style.width = `${size}px`;
-      bubble.style.height = `${size}px`;
-      bubble.style.left = `${left}%`;
-      bubble.style.animationDuration = `${4 + Math.random() * 4}s`;
-      bubble.style.animationDelay = `${Math.random() * 2}s`;
-      bubbleContainer.appendChild(bubble);
-    }
-  }
-
-  function triggerBubbles() {
-    createBubbles();
-    bubbleContainer.classList.remove('show');
-    void bubbleContainer.offsetWidth;
-    bubbleContainer.classList.add('show');
-  }
-
-  function toggleNav() {
-    navOverlay.classList.toggle('open');
-    hamburger.classList.toggle('open');
-    hamburger.setAttribute('aria-expanded', navOverlay.classList.contains('open'));
-    navOverlay.setAttribute('aria-hidden', !navOverlay.classList.contains('open'));
-    document.body.style.overflow = navOverlay.classList.contains('open') ? 'hidden' : '';
-    if (navOverlay.classList.contains('open')) {
-      setTimeout(triggerBubbles, 900);
-    }
-  }
-
-  hamburger.addEventListener('click', toggleNav);
-  hamburgerClose.addEventListener('click', toggleNav);
-
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      navOverlay.classList.remove('open');
-      hamburger.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', 'false');
-      navOverlay.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    });
-  });
-</script>
-
-<script>
-  // Scroll detection for "scrolling" class + parallax hero shift
-  let lastScrollTop = 0;
- window.addEventListener("scroll", function () {
-  const st = window.pageYOffset || document.documentElement.scrollTop;
-
-  if (Math.abs(st - lastScrollTop) > 5) {
-    document.body.classList.add("scrolling");
-    clearTimeout(window.removeScrollClass);
-    window.removeScrollClass = setTimeout(() => {
-      document.body.classList.remove("scrolling");
-    }, 150);
-  }
-  lastScrollTop = st <= 0 ? 0 : st;
-
-  const logoWrapper = document.querySelector('.logo-parallax-wrapper');
-  if (logoWrapper) {
-    logoWrapper.style.transform = `translateY(${st * 0.15}px)`;
-  }
-});
-</script>
-
-    }
-  }, false);
-
-  // Scroll fade-in animation
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-        observer.unobserve(entry.target);
+    function createBubbles() {
+      bubbleContainer.innerHTML = '';
+      for (let i = 0; i < 30; i++) {
+        const bubble = document.createElement('div');
+        bubble.classList.add('bubble');
+        const size = Math.random() * 20 + 5;
+        const left = Math.random() * 100;
+        bubble.style.width = `${size}px`;
+        bubble.style.height = `${size}px`;
+        bubble.style.left = `${left}%`;
+        bubble.style.animationDuration = `${4 + Math.random() * 4}s`;
+        bubble.style.animationDelay = `${Math.random() * 2}s`;
+        bubbleContainer.appendChild(bubble);
       }
+    }
+
+    function triggerBubbles() {
+      createBubbles();
+      bubbleContainer.classList.remove('show');
+      void bubbleContainer.offsetWidth;
+      bubbleContainer.classList.add('show');
+    }
+
+    function toggleNav() {
+      navOverlay.classList.toggle('open');
+      hamburger.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', navOverlay.classList.contains('open'));
+      navOverlay.setAttribute('aria-hidden', !navOverlay.classList.contains('open'));
+      document.body.style.overflow = navOverlay.classList.contains('open') ? 'hidden' : '';
+      if (navOverlay.classList.contains('open')) {
+        setTimeout(triggerBubbles, 900);
+      }
+    }
+
+    hamburger.addEventListener('click', toggleNav);
+    hamburgerClose.addEventListener('click', toggleNav);
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navOverlay.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        navOverlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      });
     });
-  }, {
-    threshold: 0.15
-  });
+  </script>
 
-  document.querySelectorAll('.scroll-fade').forEach(el => {
-    observer.observe(el);
-  });
-</script>
-
-<footer class="site-footer">
+  <footer class="site-footer">
   <p>Handcrafted with purpose in OKC.<br>&copy; 2025 Go Create Good Things.</p>
   <div class="social-links">
     <a href="https://instagram.com/gocreategoodthings" target="_blank">
@@ -228,5 +176,6 @@
     </a>
   </div>
 </footer>
+  
 </body>
 </html>

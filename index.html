@@ -57,11 +57,13 @@
 <main>
   <section class="hero">
     <div class="hero-inner">
-        <img src="GCGT_Logo.png" alt="Go Create Good Things Logo" class="hero-logo scroll-fade" />
-      <div class="scroll-indicator scroll-fade">
-        <span class="arrow">&#8595;</span>
-      </div>
-    </div>
+  <div class="logo-parallax-wrapper">
+    <img src="GCGT_Logo.png" alt="Go Create Good Things Logo" class="hero-logo scroll-fade" />
+  </div>
+  <div class="scroll-indicator scroll-fade">
+    <span class="arrow">&#8595;</span>
+  </div>
+</div>
   </section>
 </main>
 
@@ -175,21 +177,26 @@
 <script>
   // Scroll detection for "scrolling" class + parallax hero shift
   let lastScrollTop = 0;
-  window.addEventListener("scroll", function () {
-    const st = window.pageYOffset || document.documentElement.scrollTop;
-    if (Math.abs(st - lastScrollTop) > 5) {
-      document.body.classList.add("scrolling");
-      clearTimeout(window.removeScrollClass);
-      window.removeScrollClass = setTimeout(() => {
-        document.body.classList.remove("scrolling");
-      }, 150);
-    }
-    lastScrollTop = st <= 0 ? 0 : st;
+ window.addEventListener("scroll", function () {
+  const st = window.pageYOffset || document.documentElement.scrollTop;
 
-    const heroLogo = document.querySelector('.hero-logo');
-    if (heroLogo) {
-      heroLogo.style.setProperty('--scrollY', `${st * 0.15}px`);
-      heroLogo.classList.add('parallax-shift');
+  if (Math.abs(st - lastScrollTop) > 5) {
+    document.body.classList.add("scrolling");
+    clearTimeout(window.removeScrollClass);
+    window.removeScrollClass = setTimeout(() => {
+      document.body.classList.remove("scrolling");
+    }, 150);
+  }
+  lastScrollTop = st <= 0 ? 0 : st;
+
+  const logoWrapper = document.querySelector('.logo-parallax-wrapper');
+  if (logoWrapper) {
+    logoWrapper.style.transform = `translateY(${st * 0.15}px)`;
+  }
+});
+</script>
+
+  heroLogo.classList.add('parallax-shift');
     }
   }, false);
 

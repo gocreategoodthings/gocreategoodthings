@@ -195,8 +195,8 @@ h2 {
 
 .about-photo {
   width: 100%;
-  max-width: 480px;
-  height: auto;
+  max-width: 400px;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
   border-radius: 12px;
   margin: 0 auto 2rem;

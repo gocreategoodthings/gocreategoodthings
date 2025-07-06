@@ -37,12 +37,15 @@ h1, h2, h3, h4 {
   top: 0;
   left: 0;
   width: 100%;
-  background: transparent;
+  background: rgba(10, 10, 10, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   padding: 1.25rem 0;
-  z-index: 10;
+  z-index: 10000;
   animation: fadeRise 0.9s ease-out forwards;
   opacity: 0;
   transform: translateY(-20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .header-inner {

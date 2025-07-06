@@ -568,12 +568,12 @@ a:hover::after {
   }
 
   .hamburger-icon {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    width: 26px;
-    height: 20px;
-  }
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 28px;
+  height: 20px;
+}
 
   .hamburger-icon span {
     height: 2px;
@@ -642,7 +642,7 @@ a:hover::after {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 6rem 1.5rem var(--space-lg);
+  padding: calc(7rem + 20px) 1.5rem var(--space-lg);
   text-align: center;
 }
 

@@ -710,6 +710,38 @@ h2 {
   animation-delay: 0.9s;
 }
 
+.animated-wave-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.animated-wave-bg svg {
+  width: 100%;
+  height: 100px;
+  display: block;
+}
+
+.animated-wave-bg path {
+  fill: url(#waveGradient);
+  animation: waveMotion 6s ease-in-out infinite alternate;
+}
+
+@keyframes waveMotion {
+  0% {
+    d: path("M0,40 C360,80 1080,0 1440,40 L1440,100 L0,100 Z");
+  }
+  50% {
+    d: path("M0,30 C360,70 1080,10 1440,30 L1440,100 L0,100 Z");
+  }
+  100% {
+    d: path("M0,40 C360,80 1080,0 1440,40 L1440,100 L0,100 Z");
+  }
+}
+
 /* === BUBBLES BACKGROUND === */
 .bubbles-background {
   position: absolute;

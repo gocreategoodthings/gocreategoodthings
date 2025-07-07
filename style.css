@@ -709,6 +709,25 @@ h2 {
   animation-delay: 0.9s;
 }
 
+/* === SOFT GRADIENT WAVE BACKGROUND === */
+.way-of-life::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(120deg, #F7BA23, #F99840, #E3603E, #66BCC0, #247DA0);
+  background-size: 200% 200%;
+  animation: gradientWave 20s ease-in-out infinite;
+  opacity: 0.07;
+  pointer-events: none;
+}
+
+@keyframes gradientWave {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 .bubbles-background {
   position: absolute;
   inset: 0;
@@ -724,102 +743,6 @@ h2 {
   50% { transform: translateY(-8px); }
   100% { transform: translateY(0px); }
 }
-
-.paint-scene {
-  position: relative;
-  height: 120px;
-  margin-top: 3rem;
-  overflow: hidden;
-}
-
-.paint-trail {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 30px;
-  width: 100%;
-  background: linear-gradient(to right, #247DA0, #66BCC0, #F99840, #E3603E, #F7BA23);
-  z-index: 1;
-}
-
-.stick-figure {
-  position: absolute;
-  bottom: 30px;
-  left: -60px;
-  width: 40px;
-  height: 80px;
-  animation: walk-across 18s linear infinite;
-  z-index: 2;
-}
-
-.stick-figure div {
-  background: #000;
-  position: absolute;
-  border-radius: 2px;
-}
-
-.head {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  top: 0;
-  left: 13px;
-}
-
-.body {
-  width: 4px;
-  height: 28px;
-  top: 14px;
-  left: 18px;
-}
-
-.left-arm, .right-arm {
-  width: 20px;
-  height: 3px;
-  top: 18px;
-}
-
-.left-arm {
-  left: -4px;
-  transform: rotate(30deg);
-}
-
-.right-arm {
-  left: 14px;
-  transform: rotate(-30deg);
-}
-
-.left-leg, .right-leg {
-  width: 3px;
-  height: 20px;
-  top: 40px;
-}
-
-.left-leg {
-  left: 14px;
-  transform: rotate(10deg);
-}
-
-.right-leg {
-  left: 22px;
-  transform: rotate(-10deg);
-}
-
-.brush {
-  width: 50px;
-  height: 6px;
-  background: #444;
-  top: 20px;
-  left: 30px;
-  transform: rotate(15deg);
-  border-radius: 3px;
-}
-
-@keyframes trailGrow {
-  0% { width: 0%; }
-  100% { width: 100%; }
-}
-
 @keyframes walk-across {
   0% { left: -60px; }
   100% { left: 100%; }

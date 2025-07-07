@@ -709,6 +709,22 @@ h2 {
   animation-delay: 0.9s;
 }
 
+.grass-svg-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.grass-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 .bubbles-background {
   position: absolute;
   inset: 0;
@@ -723,34 +739,4 @@ h2 {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-8px); }
   100% { transform: translateY(0px); }
-}
-
-.grass-animate {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 90px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.blade {
-  width: 4px;
-  height: 60px;
-  background: linear-gradient(to top, #247DA0, #66BCC0);
-  border-radius: 2px;
-  transform-origin: bottom center;
-  animation: sway 3s ease-in-out infinite;
-  animation-delay: var(--delay);
-  opacity: 0.8;
-}
-
-@keyframes sway {
-  0% { transform: rotate(0deg); }
-  50% { transform: rotate(8deg); }
-  100% { transform: rotate(0deg); }
 }

@@ -152,22 +152,6 @@
     });
   </script>
 
-<script>
-  const scrollTopBtn = document.getElementById('scrollTopBtn');
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-      scrollTopBtn.classList.add('show');
-    } else {
-      scrollTopBtn.classList.remove('show');
-    }
-  });
-
-  scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-</script>
-
   <footer class="site-footer">
   <p>Handcrafted with purpose in OKC.<br>&copy; 2025 Go Create Good Things.</p>
   <div class="social-links">
@@ -201,6 +185,23 @@
 <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top" title="Back to Top">
   <img src="sun-icon.png" alt="Scroll to top" class="sun-icon" />
 </button>
+
+<!-- SCROLL TO TOP FUNCTIONALITY -->
+<script>
+  const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      scrollTopBtn.classList.add('show');
+    } else {
+      scrollTopBtn.classList.remove('show');
+    }
+  });
+
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
 
 </body>
 </html>

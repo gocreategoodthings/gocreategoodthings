@@ -725,108 +725,102 @@ h2 {
   100% { transform: translateY(0px); }
 }
 
-/* === Paint Scene at Bottom === */
 .paint-scene {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  position: relative;
   height: 120px;
+  margin-top: 3rem;
   overflow: hidden;
-  z-index: 2;
 }
 
-/* Gradient trail being painted */
 .paint-trail {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 0%;
-  height: 100%;
-  background: linear-gradient(90deg, #247DA0, #66BCC0, #F99840, #E3603E, #F7BA23);
-  animation: trailGrow 8s linear forwards;
+  height: 30px;
+  width: 100%;
+  background: linear-gradient(to right, #247DA0, #66BCC0, #F99840, #E3603E, #F7BA23);
   z-index: 1;
 }
 
-/* Stick figure animation */
 .stick-figure {
   position: absolute;
-  bottom: 20px;
-  left: 0;
-  width: 30px;
-  height: 60px;
-  animation: walkAcross 8s linear forwards;
+  bottom: 30px;
+  left: -60px;
+  width: 40px;
+  height: 80px;
+  animation: walk-across 18s linear infinite;
   z-index: 2;
 }
 
-/* Stick figure body parts */
-.stick-figure .head {
-  width: 10px;
-  height: 10px;
+.stick-figure div {
+  background: #000;
+  position: absolute;
+  border-radius: 2px;
+}
+
+.head {
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  background: #111;
-  position: absolute;
   top: 0;
-  left: 10px;
+  left: 13px;
 }
-.stick-figure .body {
-  width: 2px;
-  height: 20px;
-  background: #111;
-  position: absolute;
-  top: 10px;
-  left: 14px;
-}
-.stick-figure .left-arm,
-.stick-figure .right-arm,
-.stick-figure .left-leg,
-.stick-figure .right-leg {
-  width: 2px;
-  height: 12px;
-  background: #111;
-  position: absolute;
-}
-.stick-figure .left-arm {
-  top: 12px;
-  left: 8px;
-  transform: rotate(-45deg);
-}
-.stick-figure .right-arm {
-  top: 12px;
+
+.body {
+  width: 4px;
+  height: 28px;
+  top: 14px;
   left: 18px;
-  transform: rotate(45deg);
-}
-.stick-figure .left-leg {
-  top: 30px;
-  left: 10px;
-  transform: rotate(-20deg);
-}
-.stick-figure .right-leg {
-  top: 30px;
-  left: 16px;
-  transform: rotate(20deg);
 }
 
-/* Giant brush */
-.stick-figure .brush {
-  width: 30px;
-  height: 10px;
+.left-arm, .right-arm {
+  width: 20px;
+  height: 3px;
+  top: 18px;
+}
+
+.left-arm {
+  left: -4px;
+  transform: rotate(30deg);
+}
+
+.right-arm {
+  left: 14px;
+  transform: rotate(-30deg);
+}
+
+.left-leg, .right-leg {
+  width: 3px;
+  height: 20px;
+  top: 40px;
+}
+
+.left-leg {
+  left: 14px;
+  transform: rotate(10deg);
+}
+
+.right-leg {
+  left: 22px;
+  transform: rotate(-10deg);
+}
+
+.brush {
+  width: 50px;
+  height: 6px;
   background: #444;
-  border-radius: 5px 0 0 5px;
-  position: absolute;
-  top: 35px;
-  left: -20px;
-  transform: rotate(-15deg);
-  box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
-}
-
-/* Animations */
-@keyframes walkAcross {
-  0% { left: -40px; }
-  100% { left: 100%; }
+  top: 20px;
+  left: 30px;
+  transform: rotate(15deg);
+  border-radius: 3px;
 }
 
 @keyframes trailGrow {
   0% { width: 0%; }
   100% { width: 100%; }
+}
+
+@keyframes walk-across {
+  0% { left: -60px; }
+  100% { left: 100%; }
 }

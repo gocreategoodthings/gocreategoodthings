@@ -671,11 +671,12 @@ h2 {
   text-align: center;
   background: #ffffff;
   overflow: hidden;
+  z-index: 2;
 }
 
 .way-of-life-text {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   max-width: 720px;
   margin: 0 auto;
   font-size: 1.5rem;
@@ -709,12 +710,29 @@ h2 {
   animation-delay: 0.9s;
 }
 
+/* === BUBBLES BACKGROUND === */
+.bubbles-background {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(circle at 30% 30%, rgba(247, 186, 35, 0.12), transparent 60%),
+              radial-gradient(circle at 70% 70%, rgba(36, 125, 160, 0.08), transparent 60%);
+  animation: subtleFloat 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes subtleFloat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
 /* === SOFT GRADIENT WAVE BACKGROUND === */
 .way-of-life::before {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 0;
   background: linear-gradient(120deg, #F7BA23, #F99840, #E3603E, #66BCC0, #247DA0);
   background-size: 200% 200%;
   animation: gradientWave 20s ease-in-out infinite;
@@ -726,6 +744,18 @@ h2 {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+
+/* === FADE RISE ANIMATION === */
+@keyframes fadeRise {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .bubbles-background {

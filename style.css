@@ -664,62 +664,63 @@ h2 {
   transform: rotate(360deg);
 }
 
-/* === LIFESTYLE SECTION === */
-.lifestyle {
-  background: #fdfcf9;
+/* === WAY OF LIFE SECTION === */
+.way-of-life {
+  position: relative;
   padding: 6rem 1.5rem;
-  margin: 6rem 0;
   text-align: center;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+  background: #ffffff;
+  overflow: hidden;
 }
 
-.lifestyle h2 {
-  font-size: 2rem;
-  margin-bottom: 2.5rem;
-  color: #F99840;
-}
-
-.lifestyle-grid {
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  gap: 2rem;
-  max-width: 1000px;
+.way-of-life-text {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
   margin: 0 auto;
-}
-
-.lifestyle-text {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   line-height: 1.7;
-  max-width: 600px;
+  font-weight: 500;
+  color: #111;
 }
 
-.lifestyle-text p {
-  margin-bottom: 1.5rem;
+.way-of-life-text h2 {
+  font-size: 2.2rem;
+  color: #E3603E;
+  margin-bottom: 2rem;
 }
 
-.lifestyle-image img {
-  max-width: 400px;
-  width: 100%;
-  border-radius: 14px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+.way-of-life-text p {
+  margin-bottom: 1.6rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeRise 1s ease-out forwards;
 }
 
-/* Responsive layout */
-@media (min-width: 768px) {
-  .lifestyle-grid {
-    flex-direction: row;
-    text-align: left;
-  }
+.way-of-life-text p:nth-of-type(1) {
+  animation-delay: 0.3s;
+}
 
-  .lifestyle-text {
-    flex: 1;
-  }
+.way-of-life-text p:nth-of-type(2) {
+  animation-delay: 0.6s;
+}
 
-  .lifestyle-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-  }
+.way-of-life-text p:nth-of-type(3) {
+  animation-delay: 0.9s;
+}
+
+.bubbles-background {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(circle at 30% 30%, rgba(247, 186, 35, 0.12), transparent 60%),
+              radial-gradient(circle at 70% 70%, rgba(36, 125, 160, 0.08), transparent 60%);
+  animation: subtleFloat 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes subtleFloat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
 }

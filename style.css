@@ -633,26 +633,25 @@ h2 {
 .scroll-top-btn::after {
   content: 'Back to Top';
   position: absolute;
-  bottom: 110%;
-  background: rgba(0, 0, 0, 0.75);
+  bottom: 130%; /* raised higher */
+  background: #000;
   color: #fff;
-  font-size: 0.65rem;
-  font-weight: 400;
-  padding: 4px 8px;
-  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 5px 9px;
+  border-radius: 6px;
   white-space: nowrap;
   opacity: 0;
-  transform: translateY(-5px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transform: translateY(-6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
   pointer-events: none;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  letter-spacing: 0.02em;
 }
 
 .scroll-top-btn:hover::after {
   opacity: 1;
-  transform: translateY(-8px);
+  transform: translateY(-10px);
 }
+
 
 .sun-icon {
   width: 80px;

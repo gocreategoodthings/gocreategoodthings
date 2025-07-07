@@ -663,3 +663,63 @@ h2 {
 .scroll-top-btn:active .sun-icon {
   transform: rotate(360deg);
 }
+
+/* === LIFESTYLE SECTION === */
+.lifestyle {
+  background: #fdfcf9;
+  padding: 6rem 1.5rem;
+  margin: 6rem 0;
+  text-align: center;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.lifestyle h2 {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  color: #F99840;
+}
+
+.lifestyle-grid {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.lifestyle-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+.lifestyle-text p {
+  margin-bottom: 1.5rem;
+}
+
+.lifestyle-image img {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* Responsive layout */
+@media (min-width: 768px) {
+  .lifestyle-grid {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .lifestyle-text {
+    flex: 1;
+  }
+
+  .lifestyle-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+}

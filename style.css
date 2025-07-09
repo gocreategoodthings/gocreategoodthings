@@ -48,6 +48,12 @@ h1, h2, h3, h4 {
   border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Light gray line */
 }
 
+.header-wordmark {
+  max-height: 48px; /* Adjust this if it looks too tall/small */
+  width: auto;
+  display: block;
+}
+
 .header-inner {
   max-width: 1400px;
   margin: 0 auto;

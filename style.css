@@ -49,7 +49,8 @@ h1, h2, h3, h4 {
 }
 
 .header-wordmark {
-  max-height: 80px; /* Try 80–100px for big impact */
+  height: 120px;       /* Bold + visible size */
+  max-height: none;    /* Remove height limits */
   width: auto;
   display: block;
 }

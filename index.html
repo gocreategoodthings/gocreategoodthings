@@ -17,7 +17,7 @@
 <body>
 <header class="site-header">
   <div class="header-inner">
-    <img src="header-wordmark.png" alt="Go Create Good Things wordmark" class="header-wordmark" />
+    <span class="header-wordmark-text">Go Create <span class="gold">Good</span> Things</span>
    <button class="hamburger-icon" onclick="toggleNav()" aria-label="Toggle navigation">
   <span></span>
   <span></span>
@@ -49,7 +49,7 @@
   </section>
 </main>
 
-    <section class="contact fade-up" id="selected-work">
+    <section class="projects fade-up" id="selected-work">
   <h2>Selected Work</h2>
       <div class="project-grid">
        <a href="projects/project-1.html" class="project-card fade-up">
@@ -87,7 +87,7 @@
         and it’s how I approach every creative project.
       </span>
     </p>
-  </div
+  </div>
 </section>
 
     <section class="contact fade-up" id="contact">
@@ -134,8 +134,9 @@
 
     function triggerBubbles() {
       createBubbles();
+      // Force a reflow to ensure the container is ready
       bubbleContainer.classList.remove('show');
-      void bubbleContainer.offsetWidth;
+      bubbleContainer.offsetHeight; // Force reflow
       bubbleContainer.classList.add('show');
     }
 
@@ -144,9 +145,14 @@
       hamburger.classList.toggle('open');
       hamburger.setAttribute('aria-expanded', navOverlay.classList.contains('open'));
       navOverlay.setAttribute('aria-hidden', !navOverlay.classList.contains('open'));
-      document.body.style.overflow = navOverlay.classList.contains('open') ? 'hidden' : '';
+      
+      // Use CSS class for body scroll lock
       if (navOverlay.classList.contains('open')) {
-        setTimeout(triggerBubbles, 900);
+        document.body.classList.add('nav-open');
+        setTimeout(triggerBubbles, 500);
+      } else {
+        document.body.classList.remove('nav-open');
+        bubbleContainer.classList.remove('show');
       }
     }
 
@@ -158,7 +164,8 @@
         hamburger.classList.remove('open');
         hamburger.setAttribute('aria-expanded', 'false');
         navOverlay.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
+        document.body.classList.remove('nav-open'); // Use CSS class instead
+        bubbleContainer.classList.remove('show');
       });
     });
   </script>

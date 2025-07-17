@@ -18,12 +18,14 @@
 <header class="site-header">
   <div class="header-inner">
     <span class="header-wordmark-text">Go Create <span class="gold">Good</span> Things</span>
-   <button class="hamburger-icon" onclick="toggleNav()" aria-label="Toggle navigation">
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
+    <button id="hamburger" class="hamburger-icon" onclick="toggleNav()" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div> <!-- ✅ This was missing -->
 </header>
+
 
   <div class="nav-overlay" id="navOverlay" aria-hidden="true">
 
@@ -90,7 +92,7 @@
   </div>
 </section>
 
-    <section class="contact fade-up" id="contact">
+    <section class="about fade-up" id="about">
   <h2>About</h2>
   <img src="brud-about.jpg" alt="Photo of Brud" class="about-photo" />
   <p>
@@ -101,7 +103,7 @@
   </p>
 </section>
 
-    <section class="about fade-up" id="about">
+    <section class="contact fade-up" id="contact">
   <div class="contact-wave-top"></div>
   <h2>Let’s Talk</h2>
   <p>Have a project, a brand, or something meaningful you’re building?<br>  
@@ -111,6 +113,7 @@
   </main>
 
   <script>
+  document.addEventListener('DOMContentLoaded', function () {
     const hamburger = document.getElementById('hamburger');
     const navOverlay = document.getElementById('navOverlay');
     const navLinks = document.querySelectorAll('.nav-links a');
@@ -134,9 +137,8 @@
 
     function triggerBubbles() {
       createBubbles();
-      // Force a reflow to ensure the container is ready
       bubbleContainer.classList.remove('show');
-      bubbleContainer.offsetHeight; // Force reflow
+      bubbleContainer.offsetHeight;
       bubbleContainer.classList.add('show');
     }
 
@@ -145,8 +147,7 @@
       hamburger.classList.toggle('open');
       hamburger.setAttribute('aria-expanded', navOverlay.classList.contains('open'));
       navOverlay.setAttribute('aria-hidden', !navOverlay.classList.contains('open'));
-      
-      // Use CSS class for body scroll lock
+
       if (navOverlay.classList.contains('open')) {
         document.body.classList.add('nav-open');
         setTimeout(triggerBubbles, 500);
@@ -164,11 +165,12 @@
         hamburger.classList.remove('open');
         hamburger.setAttribute('aria-expanded', 'false');
         navOverlay.setAttribute('aria-hidden', 'true');
-        document.body.classList.remove('nav-open'); // Use CSS class instead
+        document.body.classList.remove('nav-open');
         bubbleContainer.classList.remove('show');
       });
     });
-  </script>
+  });
+</script>
 
   <footer class="site-footer">
   <p>Handcrafted with purpose in OKC.<br>&copy; 2025 Go Create Good Things.</p>

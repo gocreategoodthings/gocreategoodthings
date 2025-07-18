@@ -6,32 +6,30 @@
   letter-spacing: -0.01em;
   color: #111;
   background: none;
-  display: block;
-  line-height: 1.1;
+  display: flex;
+  align-items: center;
+  line-height: 1;
   user-select: none;
   margin-left: 0;
+  padding-left: 0.5rem;
   text-align: left;
+  padding-top: 2px;
 }
+
 .header-inner {
   display: flex;
-  justify-content: space-between; /* ✅ center-left + far-right spacing */
+  justify-content: space-between;
   align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+  gap: 1rem;
 }
+
 .header-wordmark-text .gold {
   color: #F7BA23;
 }
-@media (max-width: 600px) {
-  .header-wordmark-text {
-    font-size: 1rem;
-  }
-  .header-inner {
-    gap: 1rem;
-  }
-}
+
 /* === BASE RESET === */
 * {
   margin: 0;
@@ -50,6 +48,7 @@ body {
   color: #000;
   line-height: 1.6;
   padding: 0;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4 {
@@ -71,7 +70,7 @@ h1, h2, h3, h4 {
   top: 0;
   width: 100%;
   z-index: 11000;
-  padding: 12px 40px;
+  padding: 12px 0;
 
   background: linear-gradient(
     to right,
@@ -107,17 +106,6 @@ h1, h2, h3, h4 {
     transparent 60%
   );
   z-index: -1;
-}
-
-.header-inner {
-  display: flex;
-  justify-content: space-between; /* ✅ center-left + far-right spacing */
-  align-items: center;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0; /* Removed auto margin to prevent centering */
-  padding: 0; /* Removed padding to ensure flush alignment */
-  gap: 2.5rem;
 }
 
 .header-wordmark {
@@ -398,11 +386,12 @@ h2 {
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
-  z-index: 12001; /* ✅ Raised above .site-header (11000) */
+  z-index: 12001;
   background: none;
   border: none;
   padding: 0;
   color: #000;
+  align-self: center;     /* ✅ new line */
 }
 
 .nav-overlay .hamburger-icon {
@@ -543,13 +532,6 @@ h2 {
   .hero-logo {
     max-width: 280px;
   }
-
- .header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1.5rem;
-}
 
   .hamburger-icon {
     position: absolute;
@@ -881,4 +863,30 @@ body.nav-open .scroll-top-btn {
 /* Set all backgrounds to white except nav-overlay */
 body, .site-header, .hero, .projects, .about, .contact, .way-of-life, .site-footer {
   background: #ffffff !important;
+}
+
+/* === NAV SCROLL LOCK FIX === */
+body.nav-open {
+  overflow: hidden !important;
+  height: 100vh;
+  position: relative;
+}
+
+html.nav-open {
+  overflow: hidden !important;
+  height: 100vh;
+}
+
+#hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  padding: 0;
+  margin-left: auto;
+  margin-right: 1rem;
 }

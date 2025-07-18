@@ -16,16 +16,20 @@
 </head>
 <body>
 <header class="site-header">
-  <div class="header-inner">
-    <span class="header-wordmark-text">Go Create <span class="gold">Good</span> Things</span>
-    <button id="hamburger" class="hamburger-icon" onclick="toggleNav()" aria-label="Toggle navigation">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div> <!-- ✅ This was missing -->
+<div class="header-inner">
+  <span class="header-wordmark-text">
+    <span class="word">Go</span>&nbsp;
+    <span class="word">Create</span>&nbsp;
+    <span class="gold">Good</span>&nbsp;
+    <span class="word">Things</span>
+  </span>
+  <button id="hamburger" class="hamburger-icon" onclick="toggleNav()" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</div>
 </header>
-
 
   <div class="nav-overlay" id="navOverlay" aria-hidden="true">
 
@@ -170,6 +174,19 @@
       });
     });
   });
+
+  // ✅ Close nav overlay on ESC key press
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && navOverlay.classList.contains('open')) {
+    navOverlay.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    navOverlay.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('nav-open');
+    bubbleContainer.classList.remove('show');
+  }
+});
+
 </script>
 
   <footer class="site-footer">

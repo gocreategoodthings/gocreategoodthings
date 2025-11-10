@@ -4,241 +4,113 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Go Create Good Things</title>
-  <meta name="description" content="A custom portfolio site by a designer who builds brands with purpose. Let's Go Create Good Things together.">
+  <meta name="description" content="A premium branding, logo design, and video portfolio by Brud. Let’s Go Create Good Things together.">
   <meta property="og:title" content="Go Create Good Things" />
   <meta property="og:description" content="A branding, logo design, and video portfolio built for impact." />
   <meta property="og:image" content="gcgt-favicon-colored-transparent.png" />
   <meta property="og:type" content="website" />
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
-<header class="site-header">
-<div class="header-inner">
-  <span class="header-wordmark-text">
-    <span class="word">Go</span>&nbsp;
-    <span class="word">Create</span>&nbsp;
-    <span class="gold">Good</span>&nbsp;
-    <span class="word">Things</span>
-  </span>
-  <button id="hamburger" class="hamburger-icon" onclick="toggleNav()" aria-label="Toggle navigation">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-</div>
-</header>
-
-  <div class="nav-overlay" id="navOverlay" aria-hidden="true">
-
-    <div class="bubble-container"></div>
-
-    <nav class="nav-links" role="navigation">
-      <ul>
+  <!-- New Portfolio Header -->
+<div class="portfolio-header">
+  <img src="GCGT_Logo.png" alt="Go Create Good Things Logo" class="portfolio-logo" />
+  
+  <div class="portfolio-header-row">
+    <div class="portfolio-header-left">
+      <p class="portfolio-header-blurb">
+        Design and code are tools of expression,<br>
+        but it's people who give them purpose and set our work apart.
+      </p>
+    </div>
+    <div class="portfolio-header-center">
+      <!-- (Optional) Add a "Collaborate" label or arrow here if you want, or leave empty for now -->
+    </div>
+    <div class="portfolio-header-right">
+      <ul class="portfolio-header-nav">
         <li><a href="#selected-work">Work</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-    </nav>
-  </div>
-
-<main>
-  <section class="hero">
-    <div class="hero-inner">
-      <img src="GCGT_Logo.png" alt="Go Create Good Things Logo" class="hero-logo" />
-      <div class="scroll-indicator">
-        <span class="arrow">&#8595;</span>
-      </div>
     </div>
-  </section>
-</main>
+  </div>
+  <hr class="portfolio-header-line" />
+  <section class="hero-content-overlay">
+  <h1 class="hero-title">Go Create Good Things</h1>
+  <p class="hero-desc">Beauty in design is everywhere.<br>Meaningful art is worth more.</p>
+</section>
+</div>
 
-    <section class="projects fade-up" id="selected-work">
-  <h2>Selected Work</h2>
-      <div class="project-grid">
-       <a href="projects/project-1.html" class="project-card fade-up">
-  <div class="project-thumb"></div>
-  <h4>Project Title 1</h4>
-  <p>Short description of the project.</p>
-</a>
-
-<a href="projects/project-2.html" class="project-card fade-up">
-  <div class="project-thumb"></div>
-  <h4>Project Title 2</h4>
-  <p>Another quick blurb about what you did.</p>
-</a>
-
-<a href="projects/project-3.html" class="project-card fade-up">
-  <div class="project-thumb"></div>
-  <h4>Project Title 3</h4>
-  <p>Something fun, punchy, and scroll-stopping.</p>
-</a>
+  <main>
+    <section class="projects-section" id="selected-work">
+      <div class="section-header">
+        <h2>Selected Work</h2>
+      </div>
+      <div class="projects-grid">
+        <a href="projects/project-1.html" class="project-card">
+          <div class="project-thumb project-thumb-1"></div>
+          <div class="project-details">
+            <h3>Project Title 1</h3>
+            <p>Short description of the project.</p>
+          </div>
+        </a>
+        <a href="projects/project-2.html" class="project-card">
+          <div class="project-thumb project-thumb-2"></div>
+          <div class="project-details">
+            <h3>Project Title 2</h3>
+            <p>Another quick blurb about what you did.</p>
+          </div>
+        </a>
+        <a href="projects/project-3.html" class="project-card">
+          <div class="project-thumb project-thumb-3"></div>
+          <div class="project-details">
+            <h3>Project Title 3</h3>
+            <p>Something fun, punchy, and scroll-stopping.</p>
+          </div>
+        </a>
       </div>
     </section>
 
-  <section class="way-of-life fade-up">
-  <div class="bubbles-background"></div>
-  <div class="way-of-life-text">
-    <h2>Go Create Good Things</h2>
-    <p>Go Create Good Things is not just a phrase; it's a way to live.</p>
-    <p>It’s chasing what’s meaningful.<br>
-       Bringing real energy into everything you build.<br>
-       Caring more than most would.<br>
-       Choosing impact over ego.</p>
-    <p>
-      It’s a way of moving through the world,
-      <span style="color: #66BCC0; font-weight: 600;">
-        and it’s how I approach every creative project.
-      </span>
-    </p>
-  </div>
-</section>
+    <section class="about-section" id="about">
+      <div class="section-header">
+        <h2>About</h2>
+      </div>
+      <div class="about-content">
+        <img src="brud-about.jpg" alt="Photo of Brud" class="about-photo" />
+        <div class="about-text">
+          <p>
+            Great design should move people, not just look good. Born in Texas, building in Oklahoma, and driven by faith, I believe creative work has the power to shift perspectives and make a lasting impact on how we see and engage with the world.<br><br>
+            Let’s <span class="highlight">Go Create Good Things</span> together.
+          </p>
+        </div>
+      </div>
+    </section>
 
-    <section class="about fade-up" id="about">
-  <h2>About</h2>
-  <img src="brud-about.jpg" alt="Photo of Brud" class="about-photo" />
-  <p>
-    Great design should move people, not just look good. That’s what I’m chasing.
-    Born in Texas, building in Oklahoma, and driven by faith, I believe creative work
-    has the power to shift perspectives and make a lasting impact on how we see and engage
-    with the world. Let’s <span class="gold"> Go Create Good Things</span> together.
-  </p>
-</section>
-
-    <section class="contact fade-up" id="contact">
-  <div class="contact-wave-top"></div>
-  <h2>Let’s Talk</h2>
-  <p>Have a project, a brand, or something meaningful you’re building?<br>  
-     Let’s make it resonate.</p>
-  <a href="mailto:gocreategoodthings@gmail.com" class="contact-button">Start the Conversation</a>
-</section>
+    <section class="cta-section" id="contact">
+      <div class="section-header">
+        <h2>Let’s Talk</h2>
+      </div>
+      <p class="cta-desc">
+        Have a project, a brand, or something meaningful you’re building?<br>
+        Let’s make it resonate.
+      </p>
+      <a href="mailto:gocreategoodthings@gmail.com" class="cta-button">Start the Conversation</a>
+    </section>
   </main>
 
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const hamburger = document.getElementById('hamburger');
-    const navOverlay = document.getElementById('navOverlay');
-    const navLinks = document.querySelectorAll('.nav-links a');
-    const bubbleContainer = document.querySelector('.bubble-container');
-
-    function createBubbles() {
-      bubbleContainer.innerHTML = '';
-      for (let i = 0; i < 30; i++) {
-        const bubble = document.createElement('div');
-        bubble.classList.add('bubble');
-        const size = Math.random() * 20 + 5;
-        const left = Math.random() * 100;
-        bubble.style.width = `${size}px`;
-        bubble.style.height = `${size}px`;
-        bubble.style.left = `${left}%`;
-        bubble.style.animationDuration = `${4 + Math.random() * 4}s`;
-        bubble.style.animationDelay = `${Math.random() * 2}s`;
-        bubbleContainer.appendChild(bubble);
-      }
-    }
-
-    function triggerBubbles() {
-      createBubbles();
-      bubbleContainer.classList.remove('show');
-      bubbleContainer.offsetHeight;
-      bubbleContainer.classList.add('show');
-    }
-
-    function toggleNav() {
-      navOverlay.classList.toggle('open');
-      hamburger.classList.toggle('open');
-      hamburger.setAttribute('aria-expanded', navOverlay.classList.contains('open'));
-      navOverlay.setAttribute('aria-hidden', !navOverlay.classList.contains('open'));
-
-      if (navOverlay.classList.contains('open')) {
-        document.body.classList.add('nav-open');
-        setTimeout(triggerBubbles, 500);
-      } else {
-        document.body.classList.remove('nav-open');
-        bubbleContainer.classList.remove('show');
-      }
-    }
-
-    hamburger.addEventListener('click', toggleNav);
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navOverlay.classList.remove('open');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
-        navOverlay.setAttribute('aria-hidden', 'true');
-        document.body.classList.remove('nav-open');
-        bubbleContainer.classList.remove('show');
-      });
-    });
-  });
-
-  // ✅ Close nav overlay on ESC key press
-document.addEventListener('keydown', function (e) {
-  if (e.key === 'Escape' && navOverlay.classList.contains('open')) {
-    navOverlay.classList.remove('open');
-    hamburger.classList.remove('open');
-    hamburger.setAttribute('aria-expanded', 'false');
-    navOverlay.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('nav-open');
-    bubbleContainer.classList.remove('show');
-  }
-});
-
-</script>
-
   <footer class="site-footer">
-  <p>Handcrafted with purpose in OKC.<br>&copy; 2025 Go Create Good Things.</p>
-  <div class="social-links">
-    <a href="https://instagram.com/gocreategoodthings" target="_blank">
-      Instagram<span class="arrow">→</span>
-    </a>
-    <span class="divider">|</span>
-    <a href="https://www.linkedin.com/in/bradyhudson/" target="_blank">
-      LinkedIn<span class="arrow">→</span>
-    </a>
-  </div>
-</footer>
-<script>
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
-
-  document.querySelectorAll('.fade-up').forEach(el => {
-    observer.observe(el);
-  });
-</script>
-
-<button id="scrollTopBtn" class="scroll-top-btn" aria-label="Scroll to top">
-  <img src="sun-icon.png" alt="Scroll to top" class="sun-icon" />
-</button>
-
-<!-- SCROLL TO TOP FUNCTIONALITY -->
-<script>
-  const scrollTopBtn = document.getElementById('scrollTopBtn');
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-      scrollTopBtn.classList.add('show');
-    } else {
-      scrollTopBtn.classList.remove('show');
-    }
-  });
-
-  scrollTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-</script>
-
+    <div class="footer-row">
+      <div class="footer-left">
+        <span>Handcrafted in OKC &bull; &copy; 2025 Go Create Good Things</span>
+      </div>
+      <div class="footer-right">
+        <a href="https://instagram.com/gocreategoodthings" target="_blank">Instagram</a>
+        <span class="footer-divider">/</span>
+        <a href="https://www.linkedin.com/in/bradyhudson/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
